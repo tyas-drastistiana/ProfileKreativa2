@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.PortofolioFragment"
+    android:orientation="vertical"
+    android:scrollbars="vertical">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_portofolio"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:scrollbars="vertical">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <!--<Button-->
+        <!--android:id="@+id/expand_button1"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:drawableRight="@drawable/ic_arrow_drop_down_black_24dp"-->
+        <!--android:paddingRight="10dp"-->
+        <!--android:text="my portofolio"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="@color/white" />-->
+
+    <!--<com.github.aakira.expandablelayout.ExpandableLinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/expandableLayout1"-->
+        <!--android:layout_below="@id/expand_button1"-->
+        <!--android:orientation="vertical"-->
+        <!--app:ael_duration="400"-->
+        <!--app:ael_expanded="true"-->
+        <!--app:ael_interpolator="bounce"-->
+        <!--android:background="@color/white"-->
+        <!--android:padding="16dp">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/txt_desk"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
+    <!--</com.github.aakira.expandablelayout.ExpandableLinearLayout>-->
+
+
+</LinearLayout>

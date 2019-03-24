@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Profile Kreativa</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_Nama_PTKreativa">PT Kreativa Tecnologi Solusindo</string>
+    <string name="nav_Alamat">Jln. Ban Barak Gang Carikan No 60 - Banjarsari - Kediri</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="contact_us">Contact Us</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="drawer_Home">Home</string>
+    <string name="drawer_Organisasi">Organisasi</string>
+    <string name="drawer_Galery">Galery</string>
+    <string name="drawer_Product">Product</string>
+    <string name="drawer_Contact">Contact</string>
+    <string name="drawer_Update">New Post</string>
+    <string name="drawer_Portofolio">Portofolio</string>
+    <string name="my_portofolio">my portofolio</string>
+    <string name="visi_misi">Visi Misi</string>
+    <string name="fasilitas">fasilitas</string>
+
+    <string name="gambar">gambar</string>
+    <string name="deskripsi">deskripsi</string>
+    <string name="organisasi">Organisation Profile</string>
+    <string name="struktur_org">STRUKTUR ORGANISASI</string>
+
+
+    <string name="visi">Visi :</string>
+    <string name="misi">Misi :</string>
+
+
+</resources>

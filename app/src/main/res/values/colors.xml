@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#60a3bc</color>
+    <color name="colorPrimaryDark">#3c6382</color>
+    <color name="colorAccent">#82ccdd</color>
+    <color name="white">#ffffff</color>
+    <color name="trans">#00FFFFFF</color>
+    <color name="black">#222f3e</color>
+    <color name="abu2">#ececec</color>
+    <color name="recyc">#e77c8083</color>
+    <color name="line">#716363</color>
+
+</resources>
