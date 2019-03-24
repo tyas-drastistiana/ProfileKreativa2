@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -43,7 +44,7 @@ public class AdapterPortofolio extends RecyclerView.Adapter<AdapterPortofolio.Vi
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 //        public TextView txtTitle, txtDescription;
-        public RelativeLayout buttonLayout;
+        public LinearLayout buttonLayout;
 
         ImageView imageView; TextView tv_judul, tv_desk, tv_tgl;
 
@@ -108,9 +109,9 @@ public class AdapterPortofolio extends RecyclerView.Adapter<AdapterPortofolio.Vi
         Picasso.with(context).load(linkDatabase.linkurl()+picture).into(holder.imageView);
 //        holder.txtTitle.setText(portofolio.name);
 //        holder.txtDescription.setText(portofolio.description);
-        holder.itemView.setBackgroundColor(ContextCompat.getColor(context, R.color.line));
+//        holder.itemView.setBackgroundColor(ContextCompat.getColor(context, R.color.line));
         holder.expandableLayout.setInRecyclerView(true);
-        holder.expandableLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.abu2));
+//        holder.expandableLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.abu2));
         holder.expandableLayout.setInterpolator(Utils.createInterpolator(Utils.BOUNCE_INTERPOLATOR));
         holder.expandableLayout.setExpanded(expandStates.get(position));
         holder.expandableLayout.setListener(new ExpandableLayoutListenerAdapter() {
