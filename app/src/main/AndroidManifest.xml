@@ -57,6 +57,10 @@
         <activity android:name=".Galery_View" />
         <activity android:name=".Fasilitas_View" />
         <activity android:name=".Fragment.Berita_View"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

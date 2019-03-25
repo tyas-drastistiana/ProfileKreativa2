@@ -112,7 +112,7 @@ public class AdapterPortofolio extends RecyclerView.Adapter<AdapterPortofolio.Vi
 //        holder.itemView.setBackgroundColor(ContextCompat.getColor(context, R.color.line));
         holder.expandableLayout.setInRecyclerView(true);
 //        holder.expandableLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.abu2));
-        holder.expandableLayout.setInterpolator(Utils.createInterpolator(Utils.BOUNCE_INTERPOLATOR));
+//        holder.expandableLayout.setInterpolator(Utils.createInterpolator(Utils.BOUNCE_INTERPOLATOR));
         holder.expandableLayout.setExpanded(expandStates.get(position));
         holder.expandableLayout.setListener(new ExpandableLayoutListenerAdapter() {
             @Override

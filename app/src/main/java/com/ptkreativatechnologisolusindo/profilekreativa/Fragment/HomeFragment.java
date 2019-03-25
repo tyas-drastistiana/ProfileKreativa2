@@ -30,6 +30,7 @@ import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerFragment;
 import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 import com.google.android.youtube.player.YouTubePlayerView;
+import com.ptkreativatechnologisolusindo.profilekreativa.Data.Profil;
 import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
 import com.ptkreativatechnologisolusindo.profilekreativa.R;
 import com.squareup.picasso.Picasso;
@@ -38,28 +39,27 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HomeFragment extends Fragment {
 
     public static final String API_KEY = "AIzaSyDnzZHwUEcMg9ET0W2B47eO4-iMNNClT94";
-    private YouTubePlayer.OnInitializedListener mOnInitializedListener;
-    //    public String VIDEO_ID = "https://www.youtube.com/watch?v=GdTLMQKuOVI";
     String VIDEO_ID;
-    String[] str_split;
-    String video_url;
     private JsonArrayRequest arrayRequest;
     private RequestQueue requestQueue;
-//    YouTubePlayerFragment youTubePlayerFragment;
     LinkDatabase linkDatabase;
+    private List<Profil> lstData;
     YouTubePlayerSupportFragment youTubePlayerFragment;
     FragmentTransaction transaction;
     ImageView logo;
-    String url_img, str_nama_perusahaan;
-    TextView nama_perusahaan;
-
+    String url_img, str_nama_perusahaan, str_desk, id, str_alamat;
+    TextView nama_perusahaan, desk, alamat;
+//
 //        public static final String DEVELOPER_KEY = "AIzaSyDnzZHwUEcMg9ET0W2B47eO4-iMNNClT94";
 //    private static final String VIDEO_ID = "srH-2pQdKhg";
-    private static final int RECOVERY_DIALOG_REQUEST = 1;
-    YouTubePlayerFragment myYouTubePlayerFragment;
+//    private static final int RECOVERY_DIALOG_REQUEST = 1;
+//    YouTubePlayerFragment myYouTubePlayerFragment;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,7 +67,12 @@ public class HomeFragment extends Fragment {
 
         linkDatabase = new LinkDatabase();
         url_img = new String();
-//        str_nama_perusahaan = new String();
+        lstData = new ArrayList<>();
+        str_nama_perusahaan = new String();
+        str_desk = new String();
+        str_alamat = new String();
+        id = new String();
+
 
     }
 
@@ -81,57 +86,31 @@ public class HomeFragment extends Fragment {
 
         logo = (ImageView) v.findViewById(R.id.img);
         nama_perusahaan = (TextView) v.findViewById(R.id.txt_judul_home);
+        alamat = (TextView) v.findViewById(R.id.txt_jln_home);
+        desk = (TextView) v.findViewById(R.id.deskripsi);
+
+
 
         VIDEO_ID = new String();linkDatabase = new LinkDatabase();
         youTubePlayerFragment = YouTubePlayerSupportFragment.newInstance();
         transaction = getChildFragmentManager().beginTransaction();
         transaction.add(R.id.youtobe_layout, youTubePlayerFragment).commit();
+        geturlimg();
+        geturlvidio();
         geturl();
-//        geturlimg();
 
         return v;
     }
 
-//    private void geturlimg() {
-//        String url      =   linkDatabase.linkurl()+"url.php?operasi=view_logo";
-//        arrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
-//            @Override
-//            public void onResponse(JSONArray response) {
-//                try {
-//                    JSONObject jsonObject = response.getJSONObject(0);
-//                    url_img = linkDatabase.linkurl()+jsonObject.getString("URL_LOGO");
-////                    Toast.makeText(getBaseContext(), url_img.toString(), Toast.LENGTH_LONG).show();
-//                    Picasso.with(getContext()).load(url_img).placeholder(R.drawable.thumbnail).into(logo);
-////                    Picasso.get().load(url_img).placeholder(R.drawable.thumbnail).into(logo);
-////                    progressDialog.dismiss();
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                    Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
-//                }
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                Log.d("error", error.toString());
-//            }
-//        }
-//        );
-//        requestQueue    =   Volley.newRequestQueue(getActivity());
-//        requestQueue.add(arrayRequest);
-//    }
-
-    private void geturl() {
-        String url      =   linkDatabase.linkurl()+"url.php?operasi=view_video";
+    private void geturlimg() {
+        String url      =   linkDatabase.linkurl()+"url.php?operasi=view_logo";
         arrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 try {
                     JSONObject jsonObject = response.getJSONObject(0);
-//                    id = String.valueOf(jsonObject.getInt("ID_PROFIL"));
-//                    str_nama_perusahaan = jsonObject.getString("NAMA_PERUSAHAAN");
-                    VIDEO_ID = jsonObject.getString("URL_VIDEO_PROFIL");
-                    play();
-//                    Toast.makeText(getActivity(), VIDEO_ID, Toast.LENGTH_LONG).show();
+                    url_img = linkDatabase.linkurl()+jsonObject.getString("URL_LOGO");
+                    Picasso.with(getContext()).load(url_img).placeholder(R.drawable.thumbnail).into(logo);
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
@@ -146,6 +125,63 @@ public class HomeFragment extends Fragment {
         );
         requestQueue    =   Volley.newRequestQueue(getActivity());
         requestQueue.add(arrayRequest);
+
+    }
+
+    private void geturlvidio() {
+        String url      =   linkDatabase.linkurl()+"url.php?operasi=view_video";
+        arrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                try {
+                    JSONObject jsonObject = response.getJSONObject(0);
+                    VIDEO_ID = jsonObject.getString("URL_VIDEO_PROFIL");
+                    play();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("error", error.toString());
+            }
+        }
+        );
+        requestQueue    =   Volley.newRequestQueue(getActivity());
+        requestQueue.add(arrayRequest);
+
+    }
+
+    private void geturl() {
+        String url      =   linkDatabase.linkurl()+"profil.php?operasi=view";
+        arrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                try {
+                    JSONObject jsonObject = response.getJSONObject(0);
+                    str_nama_perusahaan = jsonObject.getString("NAMA_PERUSAHAAN");
+                    str_desk = jsonObject.getString("DESK_PERUSAHAAN");
+                    str_alamat = jsonObject.getString("ALAMAT");
+                    nama_perusahaan.setText(str_nama_perusahaan);
+                    desk.setText(str_desk);
+                    alamat.setText(str_alamat);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("error", error.toString());
+            }
+        }
+        );
+        requestQueue    =   Volley.newRequestQueue(getActivity());
+        requestQueue.add(arrayRequest);
+
     }
 
     void play(){

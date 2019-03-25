@@ -122,7 +122,7 @@
                     android:id="@+id/img_contact_email"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    app:srcCompat="@drawable/email"
+                    app:srcCompat="@drawable/gmail"
                     android:onClick="onEmail"
                     android:contentDescription="@string/contact_us"
                     android:layout_margin="10dp"
@@ -149,7 +149,7 @@
                     android:id="@+id/img_contact_instagram"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    app:srcCompat="@drawable/instagram3"
+                    app:srcCompat="@drawable/instagram"
                     android:contentDescription="@string/contact_us"
                     android:layout_margin="10dp"
                     android:layout_gravity="center"/>
