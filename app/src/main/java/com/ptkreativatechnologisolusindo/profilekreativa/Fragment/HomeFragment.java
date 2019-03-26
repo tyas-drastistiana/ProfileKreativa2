@@ -91,7 +91,8 @@ public class HomeFragment extends Fragment {
 
 
 
-        VIDEO_ID = new String();linkDatabase = new LinkDatabase();
+        VIDEO_ID = new String();
+        linkDatabase = new LinkDatabase();
         youTubePlayerFragment = YouTubePlayerSupportFragment.newInstance();
         transaction = getChildFragmentManager().beginTransaction();
         transaction.add(R.id.youtobe_layout, youTubePlayerFragment).commit();

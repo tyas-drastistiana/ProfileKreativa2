@@ -67,18 +67,20 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
-                        android:textSize="18sp"
                         android:gravity="start"
-                        android:textStyle="bold" />
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/montserrat" />
 
                     <TextView
                         android:id="@+id/txt_berita_tgl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
-                        android:textSize="13sp"
+                        android:layout_weight="1"
                         android:gravity="end"
-                        android:layout_weight="1" />
+                        android:textSize="13sp"
+                        app:fontFamily="@font/roboto_thin" />
                 </LinearLayout>
 
                 <View
@@ -94,9 +96,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:textSize="13sp"
+                    android:layout_weight="1"
                     android:gravity="start"
-                    android:layout_weight="1"/>
+                    android:textSize="13sp"
+                    app:fontFamily="@font/roboto_thin" />
                 <!--<ScrollView-->
                     <!--android:layout_width="match_parent"-->
                     <!--android:layout_height="match_parent">-->
