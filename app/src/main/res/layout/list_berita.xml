@@ -9,14 +9,16 @@
     android:layout_marginLeft="10dp"
     android:layout_marginTop="3dp"
     android:layout_marginBottom="3dp"
-    android:padding="10dp"
+    android:background="@color/colorS_Accent"
+    android:padding="5dp"
+    android:id="@+id/List_berita"
     android:layout_marginRight="10dp">
 
     <android.support.v7.widget.CardView
         android:id="@+id/CV_berita"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/abu2"
+        android:background="@color/colorPrimary"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
@@ -29,22 +31,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:background="@color/white"
+            android:background="@color/colorPrimary"
             app:elevation="10dp">
 
             <ImageView
                 android:id="@+id/img_berita_logo"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_margin="3dp"
                 android:src="@drawable/ic_menu_gallery"
                 android:contentDescription="@string/gambar"
                 android:scaleType="centerCrop"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:padding="10dp"
                 android:layout_marginRight="10dp"/>
 
@@ -67,6 +66,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:textColor="@color/text_gray"
                         android:gravity="start"
                         android:textSize="18sp"
                         android:textStyle="bold"
@@ -78,6 +78,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:textColor="@color/text_gray"
                         android:gravity="end"
                         android:textSize="13sp"
                         app:fontFamily="@font/roboto_thin" />
@@ -86,9 +87,9 @@
                 <View
                     android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
+                    android:layout_height="1dp"
                     android:layout_marginLeft="2dp"
-                    android:background="@color/line"
+                    android:background="@color/light_gray"
                     android:layout_marginStart="5dp"/>
 
                 <TextView
@@ -98,6 +99,7 @@
                     android:layout_margin="4dp"
                     android:layout_weight="1"
                     android:gravity="start"
+                    android:textColor="@color/text_gray"
                     android:textSize="13sp"
                     app:fontFamily="@font/roboto_thin" />
                 <!--<ScrollView-->

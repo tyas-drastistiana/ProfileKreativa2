@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/colorS_Accent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.v7.widget.CardView
@@ -13,7 +14,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
             
             <LinearLayout
                 android:id="@+id/ln_1"
@@ -25,9 +27,12 @@
                     android:id="@+id/img_portofolio_logo"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:layout_margin="3dp"
                     android:scaleType="centerCrop"
-                    android:padding="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:padding="10dp"
+                    android:layout_marginRight="10dp"
                     android:src="@drawable/ic_menu_gallery"
                     android:contentDescription="@string/gambar"/>
 
@@ -44,6 +49,7 @@
                         android:layout_gravity="end"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
+                        android:textColor="@color/text_gray"
                         android:textAlignment="textEnd"
                         app:fontFamily="@font/montserrat" />
 
@@ -55,7 +61,7 @@
                         android:layout_margin="4dp"
                         android:layout_weight="1"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
+                        android:textColor="@color/text_gray"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:fontFamily="@font/montserrat" />
@@ -79,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
                 android:layout_below="@id/ln_1"
-                android:background="@color/white"
+                android:background="@color/light_gray"
                 android:orientation="vertical"
                 android:padding="15dp"
                 app:ael_duration="400"
@@ -93,13 +99,29 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:background="@color/light_gray">
+
+                        <ImageView
+                            android:id="@+id/list_port_logo"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:scaleType="centerCrop"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:padding="10dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/ic_menu_gallery"
+                            android:contentDescription="@string/gambar"/>
 
                         <TextView
                             android:id="@+id/txt_desk"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:scrollbars="vertical"
+                            android:background="@color/light_gray"
                             android:textAlignment="center"
                             android:textSize="20sp"
                             app:fontFamily="@font/roboto_thin" />

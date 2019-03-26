@@ -46,7 +46,7 @@ public class AdapterPortofolio extends RecyclerView.Adapter<AdapterPortofolio.Vi
 //        public TextView txtTitle, txtDescription;
         public LinearLayout buttonLayout;
 
-        ImageView imageView; TextView tv_judul, tv_desk, tv_tgl;
+        ImageView imageView, list_port_logo; TextView tv_judul, tv_desk, tv_tgl;
 
         public ExpandableLinearLayout expandableLayout;
 
@@ -57,6 +57,7 @@ public class AdapterPortofolio extends RecyclerView.Adapter<AdapterPortofolio.Vi
             buttonLayout = v.findViewById(R.id.button);
             expandableLayout = v.findViewById(R.id.expandableLayout);
 
+//            list_port_logo = (ImageView)imageView.findViewById(R.id.list_port_logo);
             imageView=(ImageView)itemView.findViewById(R.id.img_portofolio_logo);
             tv_judul=(TextView)itemView.findViewById(R.id.txt_title);
             tv_desk=(TextView)itemView.findViewById(R.id.txt_desk);
@@ -107,6 +108,7 @@ public class AdapterPortofolio extends RecyclerView.Adapter<AdapterPortofolio.Vi
         holder.tv_tgl.setText(tanggal);
 //        Picasso.get().load(linkDatabase.linkurl()+picture).placeholder(R.drawable.thumbnail).into(holder.imageView);
         Picasso.with(context).load(linkDatabase.linkurl()+picture).into(holder.imageView);
+//        Picasso.with(context).load(linkDatabase.linkurl()+picture).into(holder.list_port_logo);
 //        holder.txtTitle.setText(portofolio.name);
 //        holder.txtDescription.setText(portofolio.description);
 //        holder.itemView.setBackgroundColor(ContextCompat.getColor(context, R.color.line));

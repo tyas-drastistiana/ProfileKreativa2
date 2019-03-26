@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:scrollbars="vertical"
-    android:background="@color/recyc"
+    android:background="@color/colorS_Accent"
     tools:context=".Fragment.BeritaFragment">
 
     <android.support.v7.widget.RecyclerView

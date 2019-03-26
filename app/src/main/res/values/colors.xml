@@ -4,8 +4,14 @@
     <color name="colorPrimaryDark">#2c748c</color>
     <color name="colorAccent">#92d4ef</color>
     <color name="colorS_Primary">#e4f5fc</color>
+
+    <color name="gray">#babec0</color>
     <color name="colorS_PrimaryDark">#b2c2c9</color>
+    <color name="colorS_Accent">#ecf0f3</color>
+    <color name="light_gray">#f5f5f5</color>
+    <color name="text_gray">#fafafa</color>
     <color name="white">#ffffff</color>
+
 
 
     <color name="trans">#00FFFFFF</color>

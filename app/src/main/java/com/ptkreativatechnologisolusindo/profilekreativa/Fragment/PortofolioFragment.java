@@ -128,28 +128,7 @@ public class PortofolioFragment extends Fragment {
         rv_portofolio = (RecyclerView) v.findViewById(R.id.recyclerview_portofolio);
 //        rv_portofolio.addItemDecoration(new DividerItemDecoration(getActivity(),0));
 //        rv_portofolio.setLayoutManager(new LinearLayoutManager(getActivity()));
-//
-//        final List<Portofolio> portofolios = new ArrayList<>();
-//        portofolios.add(new Portofolio("0 Atanasoff John Vincent",
-//                "John V. Atanasoff is considered by many historians to be" +
-//                        "the inventor of the modern electronic computer. He was" +
-//                        "born October 4, 1903, in Hamilton, New York. As a young" +
-//                        "man, Atanasoff showed considerable interest in and a talent" +
-//                        "for electronics. His academic background (B.S. in electrical" +
-//                        "engineering, Florida State University, 1925; m.S. in mathematics, Iowa State College, 1926; and Ph.D. in experimental" +
-//                        "physics, University of Wisconsin, 1930) well equipped him" +
-//                        "for the design of computing devices.  "));
-//        portofolios.add(new Portofolio("7 Bezos, Jeffrey P.",
-//                " With its ability to display extensive information and interact" +
-//                        "with users, the World Wide Web of the mid-1990s clearly" +
-//                        "had commercial possibilities. But it was far from clear how" +
-//                        "traditional merchandising could be adapted to the online" +
-//                        "world, and how the strengths of the new medium could be" +
-//                        "translated into business advantages. In creating Amazon." +
-//                        "com, “the world’s largest bookstore,” Jeff Bezos would show" +
-//                        "how the Web could be used to deliver books and other merchandise to millions of consumers. "));
-//
-//        rv_portofolio.setAdapter(new AdapterPortofolio(portofolios));
+
 
         return v;
 //        return inflater.inflate(R.layout.fragment_portofolio, container, false);
