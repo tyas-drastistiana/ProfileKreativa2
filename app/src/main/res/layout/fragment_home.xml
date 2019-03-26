@@ -108,12 +108,10 @@
             <TextView
                 android:id="@+id/deskripsi"
                 android:layout_width="match_parent"
-                android:layout_height="21dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textStyle="normal"
-                app:fontFamily="@font/roboto_thin"
-                tools:layout_editor_absoluteX="4dp"
-                tools:layout_editor_absoluteY="-1dp" />
+                app:fontFamily="@font/roboto_thin" />
 
         </LinearLayout>
 
