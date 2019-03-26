@@ -24,7 +24,6 @@ public class AdapterBerita  extends RecyclerView.Adapter<AdapterBerita .ViewHold
 //    private static final String TAG = "AdapterBerita";
 
     private Context context;
-    private LinearLayout List_berita;
     private List<Berita> mData;
     LinkDatabase linkDatabase;
     public static AdapterBerita ma;
@@ -50,14 +49,16 @@ public class AdapterBerita  extends RecyclerView.Adapter<AdapterBerita .ViewHold
 //     * Provide a reference to the type of views that you are using (custom ViewHolder)
 //     */
     public static class ViewHolder extends RecyclerView.ViewHolder {
+        public LinearLayout linearLayout;
         public ImageView gambar;
         public TextView judul_berita, desk_berita, tanggal_berita;
         public ViewHolder( View v) {
             super(v);
-            gambar = v.findViewById(R.id.img_berita_logo);
-            judul_berita = v.findViewById(R.id.txt_berita_judul);
-            desk_berita = v.findViewById(R.id.txt_berita_desk);
-            tanggal_berita = v.findViewById(R.id.txt_berita_tgl);
+            linearLayout = (LinearLayout) v.findViewById(R.id.List_berita);
+            gambar = (ImageView) v.findViewById(R.id.img_berita_logo);
+            judul_berita = (TextView) v.findViewById(R.id.txt_berita_judul);
+            desk_berita = (TextView) v.findViewById(R.id.txt_berita_desk);
+            tanggal_berita = (TextView) v.findViewById(R.id.txt_berita_tgl);
 
 
         }
@@ -89,7 +90,7 @@ public class AdapterBerita  extends RecyclerView.Adapter<AdapterBerita .ViewHold
         holder.desk_berita.setText(deskripsi);
         holder.tanggal_berita.setText(tanggal);
         Picasso.with(context).load(linkDatabase.linkurl()+picture).into(holder.gambar);
-        holder.gambar.setOnClickListener(new View.OnClickListener() {
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, Berita_View.class);
