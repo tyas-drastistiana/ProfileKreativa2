@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
+import com.bumptech.glide.Glide;
 import com.github.aakira.expandablelayout.ExpandableLayout;
 import com.github.aakira.expandablelayout.ExpandableLayoutListenerAdapter;
 import com.github.aakira.expandablelayout.ExpandableLinearLayout;
@@ -108,7 +109,7 @@ public class AdapterPortofolio extends RecyclerView.Adapter<AdapterPortofolio.Vi
         holder.tv_tgl.setText(tanggal);
 //        Picasso.get().load(linkDatabase.linkurl()+picture).placeholder(R.drawable.thumbnail).into(holder.imageView);
         Picasso.with(context).load(linkDatabase.linkurl()+picture).into(holder.imageView);
-        
+//        Glide.with(context).load(linkDatabase.linkurl()+picture).override(80, 80).placeholder(R.drawable.thumbnail).into(holder.imageView);
 //        Picasso.with(context).load(linkDatabase.linkurl()+picture).into(holder.list_port_logo);
 //        holder.txtTitle.setText(portofolio.name);
 //        holder.txtDescription.setText(portofolio.description);

@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
+import com.bumptech.glide.Glide;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Berita;
 import com.ptkreativatechnologisolusindo.profilekreativa.Fragment.Berita_View;
 import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
@@ -89,6 +90,7 @@ public class AdapterBerita  extends RecyclerView.Adapter<AdapterBerita .ViewHold
         holder.judul_berita.setText(judul);
         holder.desk_berita.setText(deskripsi);
         holder.tanggal_berita.setText(tanggal);
+//        Glide.with(context).load(linkDatabase.linkurl()+picture).override(80, 80).placeholder(R.drawable.thumbnail).into(holder.gambar);
         Picasso.with(context).load(linkDatabase.linkurl()+picture).into(holder.gambar);
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override

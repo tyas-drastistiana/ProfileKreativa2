@@ -20,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Galery;
 import com.ptkreativatechnologisolusindo.profilekreativa.Galery_View;
 import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
@@ -60,6 +61,8 @@ public class AdapterGalery extends RecyclerView.Adapter<AdapterGalery.ViewHolder
         final String foto = mData.get(position).getFOTO_GALLERY();
         final String datetime = mData.get(position).getTANGGAL_GALERY();
         holder.tv_desk.setText(desk);
+//        Glide.with(context).load(linkDatabase.linkurl()+foto)
+//                .override(150, 150).placeholder(R.drawable.thumbnail).into(holder.imageView);
         Picasso.with(context).load(linkDatabase.linkurl()+foto).resize(250, 250).into(holder.imageView);
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override

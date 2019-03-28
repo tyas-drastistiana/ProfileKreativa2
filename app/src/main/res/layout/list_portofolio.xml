@@ -33,7 +33,7 @@
                     android:layout_marginBottom="5dp"
                     android:padding="10dp"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_menu_gallery"
+                    app:srcCompat="@mipmap/ic_launcher_round"
                     android:contentDescription="@string/gambar"/>
 
                 <LinearLayout

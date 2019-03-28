@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
+import com.bumptech.glide.Glide;
 import com.ptkreativatechnologisolusindo.profilekreativa.Fasilitas_View;
 import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
 import com.ptkreativatechnologisolusindo.profilekreativa.R;
@@ -49,6 +50,7 @@ public class AdapterFasilitas extends RecyclerView.Adapter<AdapterFasilitas.View
         holder.tv_ket.setText(desk);
 //        Picasso.get().load(linkDatabase.linkurl()+foto).placeholder(R.drawable.thumbnail).into(holder.image);
         Picasso.with(context).load(linkDatabase.linkurl()+foto).into(holder.image);
+//        Glide.with(context).load(linkDatabase.linkurl()+foto).override(150, 150).placeholder(R.drawable.thumbnail).into(holder.image);
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

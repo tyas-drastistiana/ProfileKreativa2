@@ -38,7 +38,7 @@
                 android:id="@+id/img_berita_logo"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/ic_menu_gallery"
+                app:srcCompat="@mipmap/ic_launcher_round"
                 android:contentDescription="@string/gambar"
                 android:scaleType="centerCrop"
                 android:layout_marginLeft="10dp"
