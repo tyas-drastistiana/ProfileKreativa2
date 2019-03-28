@@ -60,7 +60,7 @@ public class AdapterGalery extends RecyclerView.Adapter<AdapterGalery.ViewHolder
         final String foto = mData.get(position).getFOTO_GALLERY();
         final String datetime = mData.get(position).getTANGGAL_GALERY();
         holder.tv_desk.setText(desk);
-        Picasso.with(context).load(linkDatabase.linkurl()+foto).into(holder.imageView);
+        Picasso.with(context).load(linkDatabase.linkurl()+foto).resize(250, 250).into(holder.imageView);
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
