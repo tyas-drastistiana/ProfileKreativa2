@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
@@ -43,6 +44,8 @@ public class Galery_View extends AppCompatActivity {
         str_tgl = getIntent().getStringExtra("TANGGAL_GALERY");
 
         et_desk.setText(str_desk);
+//        gambar.setVisibility(View.VISIBLE);
+//        Glide.with(this).load(linkDatabase.linkurl()+str_picture).placeholder(R.drawable.thumbnail).into(gambar);
 //        Picasso.get().load(linkDatabase.linkurl()+str_picture).placeholder(R.drawable.thumbnail).into(gambar);
         Picasso.with(this).invalidate(linkDatabase.linkurl()+str_picture);
         Picasso.with(this).load(linkDatabase.linkurl()+str_picture).networkPolicy(NetworkPolicy.NO_CACHE).memoryPolicy(MemoryPolicy.NO_CACHE);

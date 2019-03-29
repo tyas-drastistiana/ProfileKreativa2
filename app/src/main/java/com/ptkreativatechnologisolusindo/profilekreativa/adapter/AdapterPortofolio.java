@@ -107,9 +107,12 @@ public class AdapterPortofolio extends RecyclerView.Adapter<AdapterPortofolio.Vi
         holder.tv_judul.setText(judul);
         holder.tv_desk.setText(desk);
         holder.tv_tgl.setText(tanggal);
-//        Picasso.get().load(linkDatabase.linkurl()+picture).placeholder(R.drawable.thumbnail).into(holder.imageView);
-        Picasso.with(context).load(linkDatabase.linkurl()+picture).into(holder.imageView);
 //        Glide.with(context).load(linkDatabase.linkurl()+picture).override(80, 80).placeholder(R.drawable.thumbnail).into(holder.imageView);
+//        gambar.setVisibility(View.VISIBLE);
+//        Glide.with(context).load(linkDatabase.linkurl()+picture).placeholder(R.drawable.thumbnail).into(holder.imageView);
+//        Picasso.get().load(linkDatabase.linkurl()+picture).placeholder(R.drawable.thumbnail).into(holder.imageView);
+        Picasso.with(context).load(linkDatabase.linkurl()+picture).resize(70, 70).into(holder.imageView);
+
 //        Picasso.with(context).load(linkDatabase.linkurl()+picture).into(holder.list_port_logo);
 //        holder.txtTitle.setText(portofolio.name);
 //        holder.txtDescription.setText(portofolio.description);

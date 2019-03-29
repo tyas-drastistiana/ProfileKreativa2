@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
+import com.bumptech.glide.Glide;
 import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
 import com.ptkreativatechnologisolusindo.profilekreativa.R;
 import com.squareup.picasso.MemoryPolicy;
@@ -45,6 +46,9 @@ public class Berita_View extends AppCompatActivity {
 
         et_judul.setText(str_judul);
         et_desk.setText(str_desk);
+
+//        gambar.setVisibility(View.VISIBLE);
+//        Glide.with(this).load(linkDatabase.linkurl()+str_picture).placeholder(R.drawable.thumbnail).into(gambar);
 
 //        Picasso.get().load(linkDatabase.linkurl()+str_picture).placeholder(R.drawable.thumbnail).into(gambar);
         Picasso.with(this).invalidate(linkDatabase.linkurl()+str_picture);

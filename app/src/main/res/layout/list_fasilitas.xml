@@ -20,7 +20,7 @@
 
             <ImageView
                 android:id="@+id/img_fasilitas_list"
-                android:layout_width="150dp"
+                android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
                 app:srcCompat="@mipmap/ic_launcher_round"

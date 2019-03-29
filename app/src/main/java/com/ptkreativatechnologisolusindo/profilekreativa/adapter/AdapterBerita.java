@@ -91,7 +91,7 @@ public class AdapterBerita  extends RecyclerView.Adapter<AdapterBerita .ViewHold
         holder.desk_berita.setText(deskripsi);
         holder.tanggal_berita.setText(tanggal);
 //        Glide.with(context).load(linkDatabase.linkurl()+picture).override(80, 80).placeholder(R.drawable.thumbnail).into(holder.gambar);
-        Picasso.with(context).load(linkDatabase.linkurl()+picture).into(holder.gambar);
+        Picasso.with(context).load(linkDatabase.linkurl()+picture).resize(80, 80).into(holder.gambar);
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
