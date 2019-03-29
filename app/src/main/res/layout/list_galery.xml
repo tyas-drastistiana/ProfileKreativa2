@@ -8,6 +8,7 @@
     android:layout_marginBottom="2dp"
     android:padding="5dp"
     android:layout_marginRight="5dp"
+    android:id="@+id/galery_item"
     android:background="@color/colorS_Accent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
