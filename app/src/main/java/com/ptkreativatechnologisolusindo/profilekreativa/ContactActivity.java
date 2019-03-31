@@ -130,11 +130,13 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
             // Handle the camera action
             Intent home= new Intent(ContactActivity.this,HomeActivity.class);
             startActivity(home);
-        } else if (id == R.id.nav_org) {
-            Intent org= new Intent(ContactActivity.this,MenuProfileActivity.class);
-            startActivity(org);
-
-        } else if (id == R.id.nav_galery) {
+        }
+//        else if (id == R.id.nav_org) {
+//            Intent org= new Intent(ContactActivity.this,MenuProfileActivity.class);
+//            startActivity(org);
+//
+//        }
+        else if (id == R.id.nav_galery) {
             Intent galery= new Intent(ContactActivity.this,GaleryActivity.class);
             startActivity(galery);
 
@@ -146,6 +148,16 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
             Intent contact= new Intent(ContactActivity.this,ContactActivity.class);
             startActivity(contact);
 
+        }
+        else if (id == R.id.nav_organisasi){
+            Intent org = new Intent(ContactActivity.this, Organisation.class);
+            startActivity(org);
+        }else if (id == R.id.nav_visimisi){
+            Intent visimisi = new Intent(ContactActivity.this, VisiMisiActivity.class);
+            startActivity(visimisi);
+        }else if (id == R.id.nav_fasilitas){
+            Intent fasilitas = new Intent(ContactActivity.this, FasilitasActivity.class);
+            startActivity(fasilitas);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_contact);

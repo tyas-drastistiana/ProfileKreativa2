@@ -64,8 +64,9 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
         holder.tv_judul.setText(judul);
         holder.tv_desk.setText(desk);
 //        Picasso.get().load(linkDatabase.linkurl()+foto).placeholder(R.drawable.thumbnail).into(holder.imageView);
-        Picasso.with(context).load(linkDatabase.linkurl()+foto).resize(150, 150).into(holder.imageView);
-//        Glide.with(context).load(linkDatabase.linkurl()+foto).override(150, 150).placeholder(R.drawable.thumbnail).into(holder.imageView);
+//        Picasso.with(context).load(linkDatabase.linkurl()+foto).resize(150, 150).into(holder.imageView);
+//        Glide.with(context).load(linkDatabase.linkurl()+foto).into(holder.imageView);
+        Glide.with(context).load(linkDatabase.linkurl()+foto).override(150, 150).placeholder(R.drawable.thumbnail).into(holder.imageView);
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

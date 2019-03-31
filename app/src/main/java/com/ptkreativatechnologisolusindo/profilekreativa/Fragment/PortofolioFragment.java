@@ -1,5 +1,6 @@
 package com.ptkreativatechnologisolusindo.profilekreativa.Fragment;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -46,6 +47,7 @@ public class PortofolioFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private static final String KEY_LAYOUT_MANAGER = "layoutManager";
 
+    ProgressDialog progressDialog;
     LinkDatabase linkDatabase;
     Context mcontext;
 
@@ -59,6 +61,12 @@ public class PortofolioFragment extends Fragment {
         lstData =   new ArrayList<>();
         linkDatabase = new LinkDatabase();
         ma = this;
+
+        progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.show();
+
         initDataset();
     }
 
@@ -87,13 +95,13 @@ public class PortofolioFragment extends Fragment {
                     }
                 }
                 setRvadapter(lstData);
-//                progressDialog.dismiss();
+                progressDialog.dismiss();
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-//                Log.d("error", error.toString()); progressDialog.dismiss();
+                Log.d("error", error.toString()); progressDialog.dismiss();
             }
         });
         requestQueue    =   Volley.newRequestQueue(getActivity());

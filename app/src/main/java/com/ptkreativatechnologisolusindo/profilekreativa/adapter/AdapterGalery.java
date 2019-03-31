@@ -70,7 +70,8 @@ public class AdapterGalery extends RecyclerView.Adapter<AdapterGalery.ViewHolder
                 ImageView dialog_img = (ImageView) myDialog.findViewById(R.id.img_galery_list);
 
                 dialog_name.setText(mData.get(vh.getAdapterPosition()).getDESK_GALLERY());
-//                dialog_img.setImageResource(mData.get(vh.getAdapterPosition()).getFOTO_GALLERY());
+
+//                dialog_img.setImageResource(Integer.parseInt(mData.get(vh.getAdapterPosition()).getFOTO_GALLERY()));
 
                 Toast.makeText(context, "Test Click"+String.valueOf(vh.getAdapterPosition()),Toast.LENGTH_SHORT).show();
                 myDialog.show();
@@ -90,7 +91,8 @@ public class AdapterGalery extends RecyclerView.Adapter<AdapterGalery.ViewHolder
         holder.tv_desk.setText(mData.get(position).getDESK_GALLERY());
 //        holder.imageView.setImageResource(mData.get(position).getFOTO_GALLERY());
 //        Glide.with(context).load(linkDatabase.linkurl()+foto).override(170, 170).placeholder(R.drawable.thumbnail).into(holder.imageView);
-        Picasso.with(context).load(linkDatabase.linkurl()+foto).resize(200, 200).into(holder.imageView);
+        Glide.with(context).load(linkDatabase.linkurl()+foto).override(200, 200).into(holder.imageView);
+//        Picasso.with(context).load(linkDatabase.linkurl()+foto).resize(200, 200).into(holder.imageView);
 //        holder.imageView.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

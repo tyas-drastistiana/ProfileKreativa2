@@ -49,7 +49,8 @@ public class AdapterFasilitas extends RecyclerView.Adapter<AdapterFasilitas.View
         final String datetime = mData.get(position).getTANGGAL_FASILITAS();
         holder.tv_ket.setText(desk);
 //        Picasso.get().load(linkDatabase.linkurl()+foto).placeholder(R.drawable.thumbnail).into(holder.image);
-        Picasso.with(context).load(linkDatabase.linkurl()+foto).resize(200, 200).into(holder.image);
+//        Picasso.with(context).load(linkDatabase.linkurl()+foto).resize(200, 200).into(holder.image);
+        Glide.with(context).load(linkDatabase.linkurl()+foto).override(200, 200).into(holder.image);
 //        Glide.with(context).load(linkDatabase.linkurl()+foto).override(150, 150).placeholder(R.drawable.thumbnail).into(holder.image);
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override

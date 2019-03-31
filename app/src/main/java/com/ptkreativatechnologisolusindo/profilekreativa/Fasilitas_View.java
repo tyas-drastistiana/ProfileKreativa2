@@ -35,12 +35,12 @@ public class Fasilitas_View extends AppCompatActivity {
         str_tgl = getIntent().getStringExtra("TANGGAL_FASILITAS");
 
         et_desk.setText(str_desk);
-//        gambar.setVisibility(View.VISIBLE);
-//        Glide.with(this).load(linkDatabase.linkurl()+str_picture).placeholder(R.drawable.thumbnail).into(gambar);
+        gambar.setVisibility(View.VISIBLE);
+        Glide.with(this).load(linkDatabase.linkurl()+str_picture).placeholder(R.drawable.thumbnail).into(gambar);
 //        Picasso.get().load(linkDatabase.linkurl()+str_picture).placeholder(R.drawable.thumbnail).into(gambar);
-        Picasso.with(this).invalidate(linkDatabase.linkurl()+str_picture);
-        Picasso.with(this).load(linkDatabase.linkurl()+str_picture).networkPolicy(NetworkPolicy.NO_CACHE).memoryPolicy(MemoryPolicy.NO_CACHE);
-        Picasso.with(this).load(linkDatabase.linkurl()+str_picture).into(gambar);
+//        Picasso.with(this).invalidate(linkDatabase.linkurl()+str_picture);
+//        Picasso.with(this).load(linkDatabase.linkurl()+str_picture).networkPolicy(NetworkPolicy.NO_CACHE).memoryPolicy(MemoryPolicy.NO_CACHE);
+//        Picasso.with(this).load(linkDatabase.linkurl()+str_picture).into(gambar);
     }
 
     public void onBatal(View view) {finish();

@@ -78,11 +78,13 @@ public class MenuProfileActivity extends AppCompatActivity implements Navigation
             // Handle the camera action
             Intent home= new Intent(MenuProfileActivity.this,HomeActivity.class);
             startActivity(home);
-        } else if (id == R.id.nav_org) {
-            Intent org= new Intent(MenuProfileActivity.this,MenuProfileActivity.class);
-            startActivity(org);
-
-        } else if (id == R.id.nav_galery) {
+        }
+//        else if (id == R.id.nav_org) {
+//            Intent org= new Intent(MenuProfileActivity.this,MenuProfileActivity.class);
+//            startActivity(org);
+//
+//        }
+        else if (id == R.id.nav_galery) {
             Intent galery= new Intent(MenuProfileActivity.this,GaleryActivity.class);
             startActivity(galery);
 

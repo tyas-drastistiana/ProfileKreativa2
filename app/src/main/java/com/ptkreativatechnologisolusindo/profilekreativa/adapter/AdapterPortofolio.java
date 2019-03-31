@@ -110,7 +110,7 @@ public class AdapterPortofolio extends RecyclerView.Adapter<AdapterPortofolio.Vi
 //        Glide.with(context).load(linkDatabase.linkurl()+picture).override(80, 80).placeholder(R.drawable.thumbnail).into(holder.imageView);
 //        gambar.setVisibility(View.VISIBLE);
 
-        Glide.with(context).load(linkDatabase.linkurl()+picture).into(holder.imageView);
+        Glide.with(context).load(linkDatabase.linkurl()+picture).override(80, 80).into(holder.imageView);
 
         Picasso.with(context).load(linkDatabase.linkurl()+picture).resize(250, 250).into(holder.list_port_logo);
 //        Picasso.get().load(linkDatabase.linkurl()+picture).placeholder(R.drawable.thumbnail).into(holder.imageView);

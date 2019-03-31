@@ -41,7 +41,7 @@ public class BeritaFragment extends Fragment {
     private AdapterBerita myAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private static final String KEY_LAYOUT_MANAGER = "layoutManager";
-//    ProgressDialog progressDialog;
+    ProgressDialog progressDialog;
 
     LinkDatabase linkDatabase;
     Context mcontext;
@@ -57,11 +57,11 @@ public class BeritaFragment extends Fragment {
         ma = this;
 
 //
-//        progressDialog = new ProgressDialog(this);
-//        progressDialog.setMessage("Loading...");
-//        progressDialog.setCanceledOnTouchOutside(false);
-//        progressDialog.show();
-//
+        progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.show();
+
 //        final Context context = this;
 
         initDataset();
@@ -103,12 +103,12 @@ public class BeritaFragment extends Fragment {
                     }
                 }
                 setRvadapter(lstData);
-//                progressDialog.dismiss();
+                progressDialog.dismiss();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-//                Log.d("error", error.toString()); progressDialog.dismiss();
+                Log.d("error", error.toString()); progressDialog.dismiss();
             }
         });
 //
@@ -133,20 +133,4 @@ public class BeritaFragment extends Fragment {
     public BeritaFragment(){
     }
 
-    public void reload(){
-//        for(int i=0; i< lstData.size(); i++){
-//            myAdapter.delete(i);
-//            lstData.remove(i);
-//        }
-////        lstData.clear();
-//        myAdapter.notifyItemRangeChanged(0, lstData.size());
-        lstData.clear();
-        myAdapter.notifyDataSetChanged();
-//
-//        progressDialog.setMessage("Loading...");
-//        progressDialog.show();
-
-        initDataset();
-//        Toast.makeText(getBaseContext(), String.valueOf(lstData.size()), Toast.LENGTH_LONG).show();
-    }
 }

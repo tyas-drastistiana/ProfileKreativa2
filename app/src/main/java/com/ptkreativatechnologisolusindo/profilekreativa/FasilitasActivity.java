@@ -2,11 +2,19 @@ package com.ptkreativatechnologisolusindo.profilekreativa;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.android.volley.RequestQueue;
@@ -24,7 +32,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FasilitasActivity extends AppCompatActivity {
+public class FasilitasActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private RecyclerView rv_fasilitas;
     private JsonArrayRequest ArrayRequest;
     private RequestQueue requestQueue;
@@ -40,6 +48,19 @@ public class FasilitasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fasilitas);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_fasilitas);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_fasilitas);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_fasilitas);
+        navigationView.setNavigationItemSelectedListener(FasilitasActivity.this);
+
 
         rv_fasilitas = findViewById(R.id.RV_fasilitas);
         lstData =   new ArrayList<>();
@@ -99,7 +120,56 @@ public class FasilitasActivity extends AppCompatActivity {
         rv_fasilitas.setAdapter(myAdapter);
     }
 
-    public void onBack(View view) {finish();
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_fasilitas);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
 
+        if (id == R.id.nav_home) {
+            // Handle the camera action
+            Intent home= new Intent(FasilitasActivity.this,HomeActivity.class);
+            startActivity(home);
+        }
+//        else if (id == R.id.nav_org) {
+//            Intent org= new Intent(GaleryActivity.this,MenuProfileActivity.class);
+//            startActivity(org);
+//
+//        }
+        else if (id == R.id.nav_galery) {
+            Intent galery= new Intent(FasilitasActivity.this,GaleryActivity.class);
+            startActivity(galery);
+
+        } else if (id == R.id.nav_product) {
+            Intent product= new Intent(FasilitasActivity.this,ProductActivity.class);
+            startActivity(product);
+
+        } else if (id == R.id.nav_contact) {
+            Intent contact= new Intent(FasilitasActivity.this,ContactActivity.class);
+            startActivity(contact);
+
+        }
+        else if (id == R.id.nav_organisasi){
+            Intent org = new Intent(FasilitasActivity.this, Organisation.class);
+            startActivity(org);
+        }else if (id == R.id.nav_visimisi){
+            Intent visimisi = new Intent(FasilitasActivity.this, VisiMisiActivity.class);
+            startActivity(visimisi);
+        }else if (id == R.id.nav_fasilitas){
+            Intent fasilitas = new Intent(FasilitasActivity.this, FasilitasActivity.class);
+            startActivity(fasilitas);
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_fasilitas);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
 }

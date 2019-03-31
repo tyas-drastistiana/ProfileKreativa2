@@ -6,24 +6,37 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ui"
             android:title="@string/drawer_Home" />
         <item
-            android:id="@+id/nav_org"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/drawer_Organisasi"/>
-        <item
             android:id="@+id/nav_galery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/art"
             android:title="@string/drawer_Galery"/>
         <item
             android:id="@+id/nav_product"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/launch"
             android:title="@string/drawer_Product"/>
         <item
             android:id="@+id/nav_contact"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/contact"
             android:title="@string/drawer_Contact"/>
     </group>
+
+    <item android:title="@string/organisasi">
+        <menu>
+            <item
+                android:id="@+id/nav_organisasi"
+                android:title="@string/drawer_Organisasi"
+                android:icon="@drawable/group"/>
+            <item
+                android:id="@+id/nav_visimisi"
+                android:title="@string/visi_misi"
+                android:icon="@drawable/vision"/>
+            <item
+                android:id="@+id/nav_fasilitas"
+                android:title="@string/fasilitas"
+                android:icon="@drawable/product_2"/>
+        </menu>
+    </item>
     
 </menu>

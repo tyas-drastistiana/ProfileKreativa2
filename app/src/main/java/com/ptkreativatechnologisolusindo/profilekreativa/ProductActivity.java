@@ -133,11 +133,13 @@ public class ProductActivity extends AppCompatActivity implements NavigationView
             // Handle the camera action
             Intent home= new Intent(ProductActivity.this,HomeActivity.class);
             startActivity(home);
-        } else if (id == R.id.nav_org) {
-            Intent org= new Intent(ProductActivity.this,MenuProfileActivity.class);
-            startActivity(org);
-
-        } else if (id == R.id.nav_galery) {
+        }
+//        else if (id == R.id.nav_org) {
+//            Intent org= new Intent(ProductActivity.this,MenuProfileActivity.class);
+//            startActivity(org);
+//
+//        }
+        else if (id == R.id.nav_galery) {
             Intent galery= new Intent(ProductActivity.this,GaleryActivity.class);
             startActivity(galery);
 
@@ -149,6 +151,16 @@ public class ProductActivity extends AppCompatActivity implements NavigationView
             Intent contact= new Intent(ProductActivity.this,ContactActivity.class);
             startActivity(contact);
 
+        }
+        else if (id == R.id.nav_organisasi){
+            Intent org = new Intent(ProductActivity.this, Organisation.class);
+            startActivity(org);
+        }else if (id == R.id.nav_visimisi){
+            Intent visimisi = new Intent(ProductActivity.this, VisiMisiActivity.class);
+            startActivity(visimisi);
+        }else if (id == R.id.nav_fasilitas){
+            Intent fasilitas = new Intent(ProductActivity.this, FasilitasActivity.class);
+            startActivity(fasilitas);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_product);

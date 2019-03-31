@@ -2,9 +2,16 @@ package com.ptkreativatechnologisolusindo.profilekreativa;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +26,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class VisiMisiActivity extends AppCompatActivity {
+public class VisiMisiActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     TextView visi, misi;
     LinkDatabase linkDatabase;
     private JsonArrayRequest arrayRequest;
@@ -31,6 +38,21 @@ public class VisiMisiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visi_misi);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_visimisi);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_visimisi);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_visimisi);
+        navigationView.setNavigationItemSelectedListener(VisiMisiActivity.this);
+
+
+
         visi = (TextView)findViewById(R.id.TV_vm_visi);
         misi = (TextView)findViewById(R.id.TV_vm_misi);
         vm = new VisiMisiActivity();
@@ -79,4 +101,57 @@ public class VisiMisiActivity extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.nav_home) {
+            // Handle the camera action
+            Intent home= new Intent(VisiMisiActivity.this,HomeActivity.class);
+            startActivity(home);
+        }
+//        else if (id == R.id.nav_org) {
+//            Intent org= new Intent(GaleryActivity.this,MenuProfileActivity.class);
+//            startActivity(org);
+//
+//        }
+        else if (id == R.id.nav_galery) {
+            Intent galery= new Intent(VisiMisiActivity.this,GaleryActivity.class);
+            startActivity(galery);
+
+        } else if (id == R.id.nav_product) {
+            Intent product= new Intent(VisiMisiActivity.this,ProductActivity.class);
+            startActivity(product);
+
+        } else if (id == R.id.nav_contact) {
+            Intent contact= new Intent(VisiMisiActivity.this,ContactActivity.class);
+            startActivity(contact);
+
+        }
+        else if (id == R.id.nav_organisasi){
+            Intent org = new Intent(VisiMisiActivity.this, Organisation.class);
+            startActivity(org);
+        }else if (id == R.id.nav_visimisi){
+            Intent visimisi = new Intent(VisiMisiActivity.this, VisiMisiActivity.class);
+            startActivity(visimisi);
+        }else if (id == R.id.nav_fasilitas){
+            Intent fasilitas = new Intent(VisiMisiActivity.this, FasilitasActivity.class);
+            startActivity(fasilitas);
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_visimisi);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_visimisi);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 }
