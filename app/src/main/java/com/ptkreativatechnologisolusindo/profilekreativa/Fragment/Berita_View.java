@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,6 +30,9 @@ public class Berita_View extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_berita__view);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_berita_view);
+        setSupportActionBar(toolbar);
 
         et_desk = (TextView) findViewById(R.id.textView9);
         et_judul = (TextView) findViewById(R.id.TV_vm_vm);

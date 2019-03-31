@@ -28,8 +28,8 @@ public class Galery_View extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_galery__view);
 
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_galery_view);
-//        setSupportActionBar(toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_galery_view);
+        setSupportActionBar(toolbar);
 
         et_desk = (TextView) findViewById(R.id.txt_desk_view_galery);
         gambar = (ImageView)findViewById(R.id.IV_gelery_view);
@@ -43,13 +43,14 @@ public class Galery_View extends AppCompatActivity {
         str_picture = getIntent().getStringExtra("FOTO_GALLERY");
         str_tgl = getIntent().getStringExtra("TANGGAL_GALERY");
 
+
         et_desk.setText(str_desk);
-        gambar.setVisibility(View.VISIBLE);
-        Glide.with(this).load(linkDatabase.linkurl()+str_picture).placeholder(R.drawable.thumbnail).into(gambar);
+//        gambar.setVisibility(View.VISIBLE);
+//        Glide.with(this).load(linkDatabase.linkurl()+str_picture).placeholder(R.drawable.thumbnail).into(gambar);
 //        Picasso.get().load(linkDatabase.linkurl()+str_picture).placeholder(R.drawable.thumbnail).into(gambar);
-//        Picasso.with(this).invalidate(linkDatabase.linkurl()+str_picture);
-//        Picasso.with(this).load(linkDatabase.linkurl()+str_picture).networkPolicy(NetworkPolicy.NO_CACHE).memoryPolicy(MemoryPolicy.NO_CACHE);
-//        Picasso.with(this).load(linkDatabase.linkurl()+str_picture).into(gambar);
+        Picasso.with(this).invalidate(linkDatabase.linkurl()+str_picture);
+        Picasso.with(this).load(linkDatabase.linkurl()+str_picture).networkPolicy(NetworkPolicy.NO_CACHE).memoryPolicy(MemoryPolicy.NO_CACHE);
+        Picasso.with(this).load(linkDatabase.linkurl()+str_picture).into(gambar);
     }
 
     public void onBack(View view) {finish();
