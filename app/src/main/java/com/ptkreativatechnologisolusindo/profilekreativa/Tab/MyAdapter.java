@@ -18,7 +18,7 @@ import com.ptkreativatechnologisolusindo.profilekreativa.R;
 public class MyAdapter extends FragmentPagerAdapter {
     private Context mContext;
     private String[] titles ={"A","B","C"};
-    int[] icon = new int[]{R.drawable.ic_menu_gallery,R.drawable.ic_menu_gallery,R.drawable.ic_menu_gallery};
+    int[] icon = new int[]{R.drawable.ui,R.drawable.news,R.drawable.bag};
     private int heightIcon;
 
     public MyAdapter(FragmentManager fm, Context c){

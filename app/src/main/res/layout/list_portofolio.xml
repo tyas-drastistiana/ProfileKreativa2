@@ -104,8 +104,8 @@
 
                         <ImageView
                             android:id="@+id/list_port_logo"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="250dp"
+                            android:layout_height="250dp"
                             android:layout_gravity="center"
                             android:scaleType="centerCrop"
                             android:layout_marginLeft="10dp"

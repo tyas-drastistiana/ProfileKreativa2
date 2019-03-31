@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="450dp"
+    android:background="@color/colorS_PrimaryDark"
+    android:padding="5dp"
+    android:layout_gravity="center">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="5dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="5dp">>
+
+        <ImageView
+            android:id="@+id/dialog_gelery_zoom"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_menu_gallery"
+            android:padding="10dp"
+            android:contentDescription="@string/gambar"/>
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

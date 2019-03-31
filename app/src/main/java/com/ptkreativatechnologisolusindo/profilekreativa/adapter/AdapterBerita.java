@@ -1,8 +1,12 @@
 package com.ptkreativatechnologisolusindo.profilekreativa.adapter;
 
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.bumptech.glide.Glide;
@@ -29,6 +34,7 @@ public class AdapterBerita  extends RecyclerView.Adapter<AdapterBerita .ViewHold
     LinkDatabase linkDatabase;
     public static AdapterBerita ma;
     RequestQueue requestQueue;
+    Dialog myDialog;
 
 
     public AdapterBerita(Context context, List<Berita> mData ){
@@ -71,7 +77,24 @@ public class AdapterBerita  extends RecyclerView.Adapter<AdapterBerita .ViewHold
         // Create a new view.
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.list_berita, viewGroup, false);
-        ViewHolder vh = new ViewHolder(v);
+        final ViewHolder vh = new ViewHolder(v);
+
+//        myDialog = new Dialog(context);
+//        myDialog.setContentView(R.layout.list_berita);
+//        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//
+//        vh.gambar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                ImageView dialog_img = (ImageView) myDialog.findViewById(R.id.dialog_gelery_zoom);
+//
+////                dialog_img.setImageResource(mData.get(vh.getAdapterPosition()).getFOTO_GALLERY());
+//
+//                Toast.makeText(context, "Test Click"+String.valueOf(vh.getAdapterPosition()),Toast.LENGTH_SHORT).show();
+//                myDialog.show();
+//            }
+//        });
 
         return vh;
     }
@@ -80,7 +103,7 @@ public class AdapterBerita  extends RecyclerView.Adapter<AdapterBerita .ViewHold
 //    // BEGIN_INCLUDE(recyclerViewOnBindViewHolder)
 //    // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(AdapterBerita.ViewHolder holder, final int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         final String id = mData.get(position).getID_BERITA();
         final String judul = mData.get(position).getJUDUL_BERITA();
         final String deskripsi = mData.get(position).getDESK_BERITA();
@@ -91,8 +114,8 @@ public class AdapterBerita  extends RecyclerView.Adapter<AdapterBerita .ViewHold
         holder.desk_berita.setText(deskripsi);
         holder.tanggal_berita.setText(tanggal);
         //test
-//        Glide.with(context).load(linkDatabase.linkurl()+picture).override(80, 80).placeholder(R.drawable.thumbnail).into(holder.gambar);
-        Picasso.with(context).load(linkDatabase.linkurl()+picture).resize(80, 80).into(holder.gambar);
+        Glide.with(context).load(linkDatabase.linkurl()+picture).into(holder.gambar);
+//        Picasso.with(context).load(linkDatabase.linkurl()+picture).resize(80, 80).into(holder.gambar);
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

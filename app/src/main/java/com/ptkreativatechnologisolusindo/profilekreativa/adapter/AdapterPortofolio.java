@@ -58,7 +58,7 @@ public class AdapterPortofolio extends RecyclerView.Adapter<AdapterPortofolio.Vi
             buttonLayout = v.findViewById(R.id.button);
             expandableLayout = v.findViewById(R.id.expandableLayout);
 
-//            list_port_logo = (ImageView)imageView.findViewById(R.id.list_port_logo);
+            list_port_logo = (ImageView)itemView.findViewById(R.id.list_port_logo);
             imageView=(ImageView)itemView.findViewById(R.id.img_portofolio_logo);
             tv_judul=(TextView)itemView.findViewById(R.id.txt_title);
             tv_desk=(TextView)itemView.findViewById(R.id.txt_desk);
@@ -68,7 +68,7 @@ public class AdapterPortofolio extends RecyclerView.Adapter<AdapterPortofolio.Vi
 
     public ObjectAnimator createRotateAnimator(final View target, final float from, final float to) {
         ObjectAnimator animator = ObjectAnimator.ofFloat(target, "rotation", from, to);
-        animator.setDuration(300);
+        animator.setDuration(200);
         animator.setInterpolator(Utils.createInterpolator(Utils.LINEAR_INTERPOLATOR));
         return animator;
     }
@@ -109,9 +109,12 @@ public class AdapterPortofolio extends RecyclerView.Adapter<AdapterPortofolio.Vi
         holder.tv_tgl.setText(tanggal);
 //        Glide.with(context).load(linkDatabase.linkurl()+picture).override(80, 80).placeholder(R.drawable.thumbnail).into(holder.imageView);
 //        gambar.setVisibility(View.VISIBLE);
-//        Glide.with(context).load(linkDatabase.linkurl()+picture).placeholder(R.drawable.thumbnail).into(holder.imageView);
+
+        Glide.with(context).load(linkDatabase.linkurl()+picture).into(holder.imageView);
+
+        Picasso.with(context).load(linkDatabase.linkurl()+picture).resize(250, 250).into(holder.list_port_logo);
 //        Picasso.get().load(linkDatabase.linkurl()+picture).placeholder(R.drawable.thumbnail).into(holder.imageView);
-        Picasso.with(context).load(linkDatabase.linkurl()+picture).resize(70, 70).into(holder.imageView);
+//        Picasso.with(context).load(linkDatabase.linkurl()+picture).resize(70, 70).into(holder.imageView);
 
 //        Picasso.with(context).load(linkDatabase.linkurl()+picture).into(holder.list_port_logo);
 //        holder.txtTitle.setText(portofolio.name);

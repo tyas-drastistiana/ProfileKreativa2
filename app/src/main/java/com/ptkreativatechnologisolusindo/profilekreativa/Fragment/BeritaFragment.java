@@ -118,7 +118,7 @@ public class BeritaFragment extends Fragment {
     }
 
     public void setRvadapter(List<Berita> lstData) {
-        myAdapter       =   new AdapterBerita(getActivity(), lstData);
+        myAdapter       =   new AdapterBerita(getActivity().getApplication(), lstData);
         layoutManager   =   new LinearLayoutManager(getActivity());
 //        AdapterBerita recyclerViewAdapter = new AdapterBerita(getContext(), lstData);
 //
