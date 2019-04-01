@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@color/colorS_Accent"
+            android:background="@color/gray_baground"
             android:scrollbars="vertical">
 
             <android.support.v7.widget.RecyclerView

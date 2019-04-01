@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="350dp"
     android:layout_height="450dp"
-    android:background="@color/colorS_PrimaryDark"
+    android:background="@color/gray_light"
     android:padding="5dp"
     android:layout_gravity="center"
     android:scrollbars="vertical">

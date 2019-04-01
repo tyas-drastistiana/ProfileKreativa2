@@ -9,7 +9,7 @@
     android:layout_marginLeft="10dp"
     android:layout_marginTop="3dp"
     android:layout_marginBottom="3dp"
-    android:background="@color/colorS_Accent"
+    android:background="@color/gray_baground"
     android:padding="5dp"
     android:id="@+id/List_berita"
     android:layout_marginRight="10dp">
@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             app:elevation="10dp">
 
             <ImageView
