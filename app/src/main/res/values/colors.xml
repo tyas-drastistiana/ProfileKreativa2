@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#60a3bc</color>
-    <color name="colorPrimaryDark">#2c748c</color>
-    <color name="colorAccent">#92d4ef</color>
-    <color name="colorS_Primary">#e4f5fc</color>
+    <color name="colorPromer">#5352ed</color>
+    <color name="colorPrimary">#0651dd</color>
+    <color name="color1Primary">#333df7</color>
+    <color name="colorPrimaryDark">#002aaa</color>
+    <color name="color1PrimaryDark">#0012c3</color>
+    <color name="colorAccent">#647dff</color>
+    <color name="color1Accent">#7c6aff</color>
+    <color name="colorMudaBiru">#c3c7fe</color>
 
-    <color name="gray">#babec0</color>
-    <color name="coba_gray">#7b96a2</color>
-    <color name="colorS_PrimaryDark">#b2c2c9</color>
-    <color name="colorS_Accent">#ecf0f3</color>
+    <color name="colorS_Primary">#ff4756</color>
+    <color name="colorS_PrimaryDark">#c5002d</color>
+    <color name="colorS_Accent">#ff7d83</color>
+    <color name="colorS_pink">#ff6b81</color>
+    <color name="colorMudaMewar">#ffccd1</color>
+
+    <color name="color2Primary">#60a3bc</color>
+    <color name="color2PrimaryDark">#2c748c</color>
+    <color name="color2Accent">#92d4ef</color>
+    <color name="color2_Primary">#e4f5fc</color>
+
+    <color name="gray1">#babec0</color>
+    <color name="coba_gray1">#7b96a2</color>
+    <color name="color2_PrimaryDark">#b2c2c9</color>
+    <color name="color2_Accent">#ecf0f3</color>
+
     <color name="light_gray">#f5f5f5</color>
     <color name="text_gray">#fafafa</color>
     <color name="white">#ffffff</color>
-
-
 
     <color name="trans">#00FFFFFF</color>
     <color name="black">#1c2733</color>
@@ -21,5 +35,6 @@
     <color name="recyc">#e77c8083</color>
     <color name="line">#716363</color>
     <color name="expendable">#E6E5DA</color>
+
 
 </resources>
