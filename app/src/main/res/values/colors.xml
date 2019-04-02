@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPromer">#5352ed</color>
-    <color name="color1Primary">#0651dd</color>
     <color name="colorPrimary">#333df7</color>
-    <color name="color1PrimaryDark">#002aaa</color>
+    <color name="color1Primary">#333df7</color>
     <color name="colorPrimaryDark">#0012c3</color>
-    <color name="color1Accent">#647dff</color>
+    <color name="color1PrimaryDark">#0012c3</color>
     <color name="colorAccent">#7c6aff</color>
+    <color name="color1Accent">#cfc6fc</color>
     <color name="colorMudaBiru">#c3c7fe</color>
 
     <color name="gray_baground">#e1e2e1</color>
@@ -14,7 +14,7 @@
 
     <color name="colorS_Primary">#ff4756</color>
     <color name="colorS_PrimaryDark">#c5002d</color>
-    <color name="colorS_Accent">#ff7d83</color>
+    <color name="colorS_Accent">#ff3427</color>
     <color name="colorS_pink">#ff6b81</color>
     <color name="colorMudaMewar">#ffccd1</color>
 

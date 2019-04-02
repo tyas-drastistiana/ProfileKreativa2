@@ -43,6 +43,6 @@ public class Fasilitas_View extends AppCompatActivity {
 //        Picasso.with(this).load(linkDatabase.linkurl()+str_picture).into(gambar);
     }
 
-    public void onBatal(View view) {finish();
+    public void onBack(View view) {finish();
     }
 }

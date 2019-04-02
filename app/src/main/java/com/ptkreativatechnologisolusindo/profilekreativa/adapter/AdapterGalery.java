@@ -30,6 +30,7 @@ import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
 import com.ptkreativatechnologisolusindo.profilekreativa.MenuProfileActivity;
 import com.ptkreativatechnologisolusindo.profilekreativa.R;
 import com.squareup.picasso.Picasso;
+import com.stfalcon.frescoimageviewer.ImageViewer;
 
 import java.util.HashMap;
 import java.util.List;
@@ -58,25 +59,27 @@ public class AdapterGalery extends RecyclerView.Adapter<AdapterGalery.ViewHolder
 
         //Dialog
 
-//        myDialog = new Dialog(context);
-//        myDialog.setContentView(R.layout.list_galery);
-//        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//
-//        vh.item_galery.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                TextView dialog_name = (TextView) myDialog.findViewById(R.id.txt_galery_ket);
-//                ImageView dialog_img = (ImageView) myDialog.findViewById(R.id.img_galery_list);
-//
-//                dialog_name.setText(mData.get(vh.getAdapterPosition()).getDESK_GALLERY());
-//
-////                dialog_img.setImageResource(Integer.parseInt(mData.get(vh.getAdapterPosition()).getFOTO_GALLERY()));
-//
+        myDialog = new Dialog(context);
+        myDialog.setContentView(R.layout.list_galery);
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        vh.item_galery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                TextView dialog_name = (TextView) myDialog.findViewById(R.id.txt_galery_ket);
+                ImageView dialog_img = (ImageView) myDialog.findViewById(R.id.img_galery_list);
+
+                dialog_name.setText(mData.get(vh.getAdapterPosition()).getDESK_GALLERY());
+                Glide.with(context).load(linkDatabase.linkurl()+mData.get(vh.getAdapterPosition()).getFOTO_GALLERY())
+                        .override(300, 300).into(dialog_img);
+
+//                dialog_img.setImageResource(Glide.with(context).load(mData.get(vh.getAdapterPosition()).getFOTO_GALLERY()));
+
 //                Toast.makeText(context, "Test Click"+String.valueOf(vh.getAdapterPosition()),Toast.LENGTH_SHORT).show();
-//                myDialog.show();
-//            }
-//        });
+                myDialog.show();
+            }
+        });
 
         return vh;
     }
@@ -93,19 +96,19 @@ public class AdapterGalery extends RecyclerView.Adapter<AdapterGalery.ViewHolder
 //        Glide.with(context).load(linkDatabase.linkurl()+foto).override(170, 170).placeholder(R.drawable.thumbnail).into(holder.imageView);
         Glide.with(context).load(linkDatabase.linkurl()+foto).override(200, 200).into(holder.imageView);
 //        Picasso.with(context).load(linkDatabase.linkurl()+foto).resize(200, 200).into(holder.imageView);
-        holder.imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, Galery_View.class);
-                intent.putExtra("ID_GALLERY", id);
-                intent.putExtra("DESK_GALLERY", desk);
-                intent.putExtra("FOTO_GALLERY", foto);
-                intent.putExtra("TANGGAL_GALERY", datetime);
-
-                context.startActivity(intent);
-//                dialog.dismiss();
-            }
-        });
+//        holder.imageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(context, Galery_View.class);
+//                intent.putExtra("ID_GALLERY", id);
+//                intent.putExtra("DESK_GALLERY", desk);
+//                intent.putExtra("FOTO_GALLERY", foto);
+//                intent.putExtra("TANGGAL_GALERY", datetime);
+//
+//                context.startActivity(intent);
+////                dialog.dismiss();
+//            }
+//        });
     }
 
     @Override

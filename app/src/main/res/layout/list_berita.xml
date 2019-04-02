@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/colorAccent"
+            android:background="@color/colorS_Accent"
             app:elevation="10dp">
 
             <ImageView
