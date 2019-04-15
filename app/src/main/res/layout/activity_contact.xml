@@ -182,6 +182,34 @@
                 android:layout_margin="10dp">
 
                 <ImageView
+                    android:id="@+id/img_contact_fb"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/facebook"
+                    android:onClick="OnFB"
+                    android:contentDescription="@string/contact_us"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/txt_contact_fb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:onClick="OnFB"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/roboto_thin"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10dp">
+
+                <ImageView
                     android:id="@+id/img_contact_wa"
                     android:layout_width="30dp"
                     android:layout_height="30dp"

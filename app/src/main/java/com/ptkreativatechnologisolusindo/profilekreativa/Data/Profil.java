@@ -1,7 +1,21 @@
 package com.ptkreativatechnologisolusindo.profilekreativa.Data;
 
 public class Profil {
-    private String NAMA_PERUSAHAAN, ALAMAT, EMAIL, DESK_PERUSAHAAN, INSTAGRAM, TELP;
+    private String NAMA_PERUSAHAAN;
+    private String ALAMAT;
+    private String EMAIL;
+    private String DESK_PERUSAHAAN;
+    private String INSTAGRAM;
+    private String TELP;
+    private String FB;
+
+    public String getFB() {
+        return FB;
+    }
+
+    public void setFB(String FB) {
+        this.FB = FB;
+    }
 
     public void setALAMAT(String ALAMAT) {
         this.ALAMAT = ALAMAT;

@@ -37,9 +37,9 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
     private RequestQueue requestQueue;
     private List<Profil> lstData;
     public static ContactActivity PA;
-    TextView nama_perusahaan, alamat, no_telp, email,instagram, wa;
+    TextView nama_perusahaan, alamat, no_telp, email,instagram, wa, fb;
     String str_nama_perusahaan, str_alamat, str_no_telp, str_email,str_instagram,
-            str_desk, id, str_wa;
+            str_desk, id, str_wa, str_fb;
     ProgressDialog progressDialog;
 
     @Override
@@ -68,6 +68,8 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
         str_instagram = new String();
         id = new String();
         str_wa = new String();
+        str_fb = new String();
+        fb = (TextView)findViewById(R.id.txt_contact_fb);
         nama_perusahaan = (TextView)findViewById(R.id.txt_contact_nama);
         alamat = (TextView)findViewById(R.id.txt_contact_almt);
         no_telp = (TextView)findViewById(R.id.txt_contact_telp);
@@ -96,6 +98,7 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
                     str_alamat = jsonObject.getString("ALAMAT");
                     str_instagram = jsonObject.getString("INSTAGRAM");
                     str_wa =jsonObject.getString("WHATSAPP");
+                    str_fb = jsonObject.getString("FACEBOOK");
 
 
                     nama_perusahaan.setText(str_nama_perusahaan);
@@ -104,6 +107,7 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
                     email.setText(str_email);
                     instagram.setText(str_instagram);
                     wa.setText(str_wa);
+                    fb.setText(str_fb);
                     progressDialog.dismiss();
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -198,5 +202,9 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
         catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void OnFB(View view){
+
     }
 }
