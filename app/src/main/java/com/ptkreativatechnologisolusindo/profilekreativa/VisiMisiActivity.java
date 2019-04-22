@@ -137,6 +137,9 @@ public class VisiMisiActivity extends AppCompatActivity implements NavigationVie
         }else if (id == R.id.nav_fasilitas){
             Intent fasilitas = new Intent(VisiMisiActivity.this, FasilitasActivity.class);
             startActivity(fasilitas);
+        }else if (id == R.id.nav_event){
+            Intent event = new Intent(VisiMisiActivity.this, EventActivity.class);
+            startActivity(event);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_visimisi);

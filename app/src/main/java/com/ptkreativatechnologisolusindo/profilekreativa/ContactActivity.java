@@ -151,7 +151,6 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
         } else if (id == R.id.nav_contact) {
             Intent contact= new Intent(ContactActivity.this,ContactActivity.class);
             startActivity(contact);
-
         }
         else if (id == R.id.nav_organisasi){
             Intent org = new Intent(ContactActivity.this, Organisation.class);
@@ -162,6 +161,9 @@ public class ContactActivity extends AppCompatActivity implements NavigationView
         }else if (id == R.id.nav_fasilitas){
             Intent fasilitas = new Intent(ContactActivity.this, FasilitasActivity.class);
             startActivity(fasilitas);
+        }else if (id == R.id.nav_event){
+            Intent event = new Intent(ContactActivity.this, EventActivity.class);
+            startActivity(event);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_contact);

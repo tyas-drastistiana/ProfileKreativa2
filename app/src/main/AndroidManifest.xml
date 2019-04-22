@@ -56,11 +56,14 @@
         <activity android:name=".Product_view" />
         <activity android:name=".Galery_View" />
         <activity android:name=".Fasilitas_View" />
-        <activity android:name=".Fragment.Berita_View"></activity>
+        <activity android:name=".Fragment.Berita_View" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".EventActivity" />
+        <activity android:name=".EventViewActivity"></activity>
     </application>
 
 </manifest>

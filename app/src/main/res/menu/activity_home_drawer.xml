@@ -13,6 +13,11 @@
             android:icon="@drawable/art"
             android:title="@string/drawer_Galery"/>
         <item
+            android:id="@+id/nav_event"
+            android:icon="@drawable/art"
+            android:title="@string/drawer_event"
+            />
+        <item
             android:id="@+id/nav_product"
             android:icon="@drawable/launch"
             android:title="@string/drawer_Product"/>

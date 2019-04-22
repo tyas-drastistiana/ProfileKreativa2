@@ -154,6 +154,9 @@ public class Organisation extends AppCompatActivity implements NavigationView.On
         }else if (id == R.id.nav_fasilitas){
             Intent fasilitas = new Intent(Organisation.this, FasilitasActivity.class);
             startActivity(fasilitas);
+        }else if (id == R.id.nav_event){
+            Intent event = new Intent(Organisation.this, EventActivity.class);
+            startActivity(event);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_org);

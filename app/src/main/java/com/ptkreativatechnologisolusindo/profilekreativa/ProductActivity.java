@@ -161,6 +161,9 @@ public class ProductActivity extends AppCompatActivity implements NavigationView
         }else if (id == R.id.nav_fasilitas){
             Intent fasilitas = new Intent(ProductActivity.this, FasilitasActivity.class);
             startActivity(fasilitas);
+        }else if (id == R.id.nav_event){
+            Intent event = new Intent(ProductActivity.this, EventActivity.class);
+            startActivity(event);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_product);
