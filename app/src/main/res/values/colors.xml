@@ -1,37 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">#68b4cf</color>
+    <color name="colorPrimaryDark">#32849e</color>
+    <color name="colorAccent">#9be6ff</color>
+
+    <color name="colorS_Primary">#e1e2e1</color>
+    <color name="colorS_PrimaryDark">#afb0af</color>
+    <color name="colorS_Accent">#ffffff</color>
+
+    <color name="gray_900">#222322</color>
+    <color name="gray_800">#434444</color>
+    <color name="gray_700">#626363</color>
+    <color name="gray_600">#767777</color>
+    <color name="gray_500">#9fa0a0</color>
+    <color name="gray_400">#bebfbf</color>
+    <color name="gray_200">#eff0ef</color>
+    <color name="gray_100">#f5f6f5</color>
+    <color name="gray_50">#fafbfa</color>
+
+    <color name="ungu_600">#1538f0</color>
+    <color name="ungu_400">#645af9</color>
+    <color name="ungu_300">#8778fa</color>
+    <color name="ungu_200">#ad9ffb</color>
+    <color name="ungu_100">#cfc6fc</color>
+    <color name="ungu_50">#ede8fe</color>
+
+
+    <color name="biru1_900">#124a72</color>
+    <color name="biru1_800">#266890</color>
+    <color name="biru1_700">#2d78a3</color>
+    <color name="biru1_600">#378ab5</color>
+    <color name="biru1_500">#3d97c2</color>
+    <color name="biru1_400">#55a5c6</color>
+    <color name="biru1_300">#68b4cf</color>
+    <color name="biru1_200">#8ac9dd</color>
+    <color name="biru1_100">#b5deeb</color>
+    <color name="biru1_50">#e2f2f7</color>
+
+
+    <color name="biru2_900">#41585e</color>
+    <color name="biru2_800">#4e7b89</color>
+    <color name="biru2_700">#568fa2</color>
+    <color name="biru2_600">#60a3bc</color>
+    <color name="biru2_500">#68b3cf</color>
+    <color name="biru2_400">#6abeda</color>
+    <color name="biru2_300">#77c9e3</color>
+    <color name="biru2_200">#95d9ee</color>
+    <color name="biru2_100">#bce8f6</color>
+    <color name="biru2_50">#e4f5fc</color>
+
+    <color name="biru3_900">#236271</color>
+    <color name="biru3_800">#32859e</color>
+    <color name="biru3_700">#3a98b7</color>
+    <color name="biru3_600">#45add3</color>
+    <color name="biru3_500">#4cbde7</color>
+    <color name="biru3_400">#52c7ee</color>
+    <color name="biru3_300">#67d0f4</color>
+    <color name="biru3_200">#8edefa</color>
+    <color name="biru3_100">#baebfd</color>
+    <color name="biru3_50">#e3f7ff</color>
+
+
+    <color name="biru5_900">#0055a1</color>
+    <color name="biru5_800">#0075c2</color>
+    <color name="biru5_700">#0086d5</color>
+    <color name="biru5_600">#0099e8</color>
+    <color name="biru5_500">#00a6f6</color>
+    <color name="biru5_400">#00b4f7</color>
+    <color name="biru5_300">#00c2f8</color>
+    <color name="biru5_200">#51d4fc</color>
+    <color name="biru5_100">#9be6ff</color>
+    <color name="biru5_50">#d9f6ff</color>
+
+
+    <color name="biru4_900">#1f168d</color>
+    <color name="biru4_800">#2b2ba3</color>
+    <color name="biru4_700">#3235b0</color>
+    <color name="biru4_600">#3b40bd</color>
+    <color name="biru4_500">#4048c7</color>
+    <color name="biru4_400">#5b64d4</color>
+    <color name="biru4_300">#7680e2</color>
+    <color name="biru4_200">#9ca4f3</color>
+    <color name="biru4_100">#c3c7fe</color>
+    <color name="biru4_50">#e7e9ff</color>
+
     <color name="colorPromer">#5352ed</color>
-    <color name="colorPrimary">#333df7</color>
     <color name="color1Primary">#333df7</color>
-    <color name="colorPrimaryDark">#0012c3</color>
     <color name="color1PrimaryDark">#0012c3</color>
-    <color name="colorAccent">#7c6aff</color>
     <color name="color1Accent">#cfc6fc</color>
     <color name="colorMudaBiru">#c3c7fe</color>
-
     <color name="gray_baground">#e1e2e1</color>
     <color name="gray_light">#f5f5f6</color>
-
-    <color name="colorS_Primary">#ff4756</color>
-    <color name="colorS_PrimaryDark">#c5002d</color>
-    <color name="colorS_Accent">#ff3427</color>
     <color name="colorS_pink">#ff6b81</color>
     <color name="colorMudaMewar">#ffccd1</color>
-
     <color name="color2Primary">#60a3bc</color>
     <color name="color2PrimaryDark">#2c748c</color>
     <color name="color2Accent">#92d4ef</color>
     <color name="color2_Primary">#e4f5fc</color>
-
     <color name="gray1">#babec0</color>
     <color name="coba_gray1">#7b96a2</color>
     <color name="color2_PrimaryDark">#b2c2c9</color>
     <color name="color2_Accent">#ecf0f3</color>
-
     <color name="light_gray">#f5f5f5</color>
     <color name="text_gray">#fafafa</color>
     <color name="white">#ffffff</color>
-
     <color name="trans">#00FFFFFF</color>
     <color name="black">#1c2733</color>
     <color name="abu2">#ececec</color>
