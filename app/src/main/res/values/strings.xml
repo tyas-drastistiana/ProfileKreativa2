@@ -33,5 +33,22 @@
     <string name="visi">Visi :</string>
     <string name="misi">Misi :</string>
 
+    <string-array name="status">
+        <item>SD</item>
+        <item>SMP</item>
+        <item>SMA</item>
+        <item>SMK</item>
+        <item>D1</item>
+        <item>D2</item>
+        <item>D3</item>
+        <item>D4</item>
+        <item>S1</item>
+        <item>S2</item>
+        <item>S3</item>
+    </string-array>
 
+    <string-array name="kel">
+        <item>Laki</item>
+        <item>Perempuan</item>
+    </string-array>
 </resources>

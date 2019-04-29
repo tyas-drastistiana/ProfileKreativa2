@@ -63,7 +63,9 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".EventActivity" />
-        <activity android:name=".EventViewActivity"></activity>
+        <activity android:name=".EventViewActivity" />
+        <activity android:name=".PendaftaranEventActivity" />
+        <activity android:name=".ViewPesertaEventActivity"></activity>
     </application>
 
 </manifest>

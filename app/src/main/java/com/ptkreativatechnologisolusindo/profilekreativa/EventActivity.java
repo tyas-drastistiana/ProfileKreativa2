@@ -1,11 +1,19 @@
 package com.ptkreativatechnologisolusindo.profilekreativa;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -22,7 +30,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventActivity extends AppCompatActivity {
+public class EventActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private RecyclerView rv_event;
     private JsonArrayRequest ArrayRequest;
     private RequestQueue requestQueue;
@@ -40,6 +48,19 @@ public class EventActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_event);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_event);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_event);
+        navigationView.setNavigationItemSelectedListener(EventActivity.this);
+
 
         rv_event = findViewById(R.id.RV_event);
         lstData =   new ArrayList<>();
@@ -101,5 +122,62 @@ public class EventActivity extends AppCompatActivity {
         layoutManager   =   new LinearLayoutManager(this);
         rv_event.setLayoutManager(layoutManager);
         rv_event.setAdapter(myAdapter);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_home) {
+            // Handle the camera action
+            Intent home= new Intent(EventActivity.this,HomeActivity.class);
+            startActivity(home);
+        }
+//        else if (id == R.id.nav_org) {
+//            Intent org= new Intent(ProductActivity.this,MenuProfileActivity.class);
+//            startActivity(org);
+//
+//        }
+        else if (id == R.id.nav_galery) {
+            Intent galery= new Intent(EventActivity.this,GaleryActivity.class);
+            startActivity(galery);
+
+        } else if (id == R.id.nav_product) {
+            Intent product= new Intent(EventActivity.this,ProductActivity.class);
+            startActivity(product);
+
+        } else if (id == R.id.nav_contact) {
+            Intent contact= new Intent(EventActivity.this,ContactActivity.class);
+            startActivity(contact);
+
+        }
+        else if (id == R.id.nav_organisasi){
+            Intent org = new Intent(EventActivity.this, Organisation.class);
+            startActivity(org);
+        }else if (id == R.id.nav_visimisi){
+            Intent visimisi = new Intent(EventActivity.this, VisiMisiActivity.class);
+            startActivity(visimisi);
+        }else if (id == R.id.nav_fasilitas){
+            Intent fasilitas = new Intent(EventActivity.this, FasilitasActivity.class);
+            startActivity(fasilitas);
+        }else if (id == R.id.nav_event){
+            Intent event = new Intent(EventActivity.this, EventActivity.class);
+            startActivity(event);
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_event);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_event);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 }
