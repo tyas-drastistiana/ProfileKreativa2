@@ -4,59 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background2"
-    tools:context=".SplashScreen">
-    
-    <RelativeLayout
+    tools:context=".SplashScreen"
+    android:background="@drawable/side_nav_bar">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/logosplash"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/company_profile"
-            android:layout_centerHorizontal="true"
-            android:layout_centerInParent="true"
-            android:layout_centerVertical="true"
-            android:contentDescription="@string/gambar"/>
+            android:id="@+id/ivkreativa"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_launcher_round"
+            android:contentDescription="@string/app_splash_logo"/>
 
         <TextView
+            android:id="@+id/txtkreativa1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_pt"
-            android:text="@string/nav_Nama_PTKreativa"
-            android:textAlignment="center"
-            android:textSize="17sp"
-            android:textColor="@color/colorPrimary"
-            android:layout_below="@id/logosplash"
-            android:layout_marginTop="20sp"
+            android:text="@string/spp_splash_profile"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:gravity="center"
-            android:textStyle="bold" />
+            android:textColor="@color/colorS_Accent"
+            app:fontFamily="@font/robotocondensed_bold"
+            android:textSize="18sp"/>
 
         <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp"
-            android:id="@+id/text_view"
-            android:textAlignment="center"
-            android:layout_centerHorizontal="true"
-            android:layout_above="@id/progress_bar"
-            android:layout_marginBottom="5dp"
-            android:gravity="center"
-            />
-
-        <ProgressBar
+            android:id="@+id/txtkreativa2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/progress_bar"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="25dp" />
-    </RelativeLayout>
-    
+            android:text="@string/spp_splash_nama"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:textColor="@color/colorS_Accent"
+            app:fontFamily="@font/robotocondensed_bold"
+            android:textSize="16sp"/>
 
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

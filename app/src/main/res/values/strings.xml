@@ -33,6 +33,12 @@
     <string name="visi">Visi :</string>
     <string name="misi">Misi :</string>
 
+    <string name="app_splash_logo">LogoKreativa</string>
+    <string name="spp_splash_profile">APLIKASI PROFILE</string>
+    <string name="spp_splash_nama">PT. KREATIVA TECHNOLOGI SOLUSINDO</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+
     <string-array name="status">
         <item>SD</item>
         <item>SMP</item>

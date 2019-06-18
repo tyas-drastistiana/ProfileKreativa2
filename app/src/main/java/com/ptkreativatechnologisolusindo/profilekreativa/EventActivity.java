@@ -9,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -119,7 +120,7 @@ public class EventActivity extends AppCompatActivity implements NavigationView.O
 
     private void setRvadapter(List<Event> lstData) {
         myAdapter       =   new AdapterEvent(this, lstData);
-        layoutManager   =   new LinearLayoutManager(this);
+        layoutManager   =   new GridLayoutManager(this,2);
         rv_event.setLayoutManager(layoutManager);
         rv_event.setAdapter(myAdapter);
     }
@@ -179,5 +180,22 @@ public class EventActivity extends AppCompatActivity implements NavigationView.O
         } else {
             super.onBackPressed();
         }
+    }
+
+    public void reload(){
+//        for(int i=0; i< lstData.size(); i++){
+//            myAdapter.delete(i);
+//            lstData.remove(i);
+//        }
+////        lstData.clear();
+//        myAdapter.notifyItemRangeChanged(0, lstData.size());
+        lstData.clear();
+        myAdapter.notifyDataSetChanged();
+
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
+
+        initDataset();
+//        Toast.makeText(getBaseContext(), String.valueOf(lstData.size()), Toast.LENGTH_LONG).show();
     }
 }

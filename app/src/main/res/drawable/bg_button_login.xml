@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    android:shape="rectangle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <stroke
+        android:width="3dp"
+        android:color="@color/biru1_700">
+    </stroke>
+
+    <corners
+        android:radius="20dp">
+    </corners>
+    <!--<gradient-->
+    <!--android:startColor="@color/biru1_700"-->
+    <!--android:endColor="@color/biru1_700"-->
+    <!--&gt;-->
+    <!--</gradient>-->
+</shape>

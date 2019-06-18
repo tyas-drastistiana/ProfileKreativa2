@@ -17,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.github.chrisbanes.photoview.PhotoViewAttacher;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -33,10 +35,12 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
+//import uk.co.senab.photoview.PhotoViewAttacher;
+
 public class Organisation extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private final int IMG_REQUEST =1;
     public Bitmap bitmap;
-    ImageView organisasi;
+    ImageButton organisasi;
     LinkDatabase linkDatabase;
     private RequestQueue requestQueue;
     private JsonArrayRequest arrayRequest;
@@ -60,7 +64,9 @@ public class Organisation extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(Organisation.this);
 
 
-        organisasi = findViewById(R.id.IV_organisasi);
+        organisasi = (ImageButton) findViewById(R.id.IV_organisasi);
+        PhotoViewAttacher photoViewAttacher = new PhotoViewAttacher(organisasi);
+        photoViewAttacher.update();
         url_organisasi = new String();
         linkDatabase = new LinkDatabase();
         progressDialog = new ProgressDialog(this);
@@ -82,6 +88,7 @@ public class Organisation extends AppCompatActivity implements NavigationView.On
                     url_organisasi = linkDatabase.linkurl()+jsonObject.getString("URL_STRUKTUR_ORGANISASI");
 //                    Toast.makeText(getBaseContext(), url_img.toString(), Toast.LENGTH_LONG).show();
                     Picasso.with(getBaseContext()).load(url_organisasi).into(organisasi);
+
                     progressDialog.dismiss();
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -110,7 +117,6 @@ public class Organisation extends AppCompatActivity implements NavigationView.On
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), path);
                 organisasi.setImageBitmap(bitmap);
-
             } catch (IOException e) {
                 e.printStackTrace();
             }

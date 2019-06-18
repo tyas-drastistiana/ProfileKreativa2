@@ -112,11 +112,11 @@ public class PortofolioFragment extends Fragment {
     public void setRvadapter(List<Portofolio> lst) {
         myAdapter       =   new AdapterPortofolio(getActivity(), lst);
         layoutManager   =   new LinearLayoutManager(getActivity());
-        ((LinearLayoutManager) layoutManager).setReverseLayout(true);
+//        ((LinearLayoutManager) layoutManager).setReverseLayout(true);
         rv_portofolio.setLayoutManager(layoutManager);
         rv_portofolio.setAdapter(myAdapter);
 //        rv_portofolio.setAdapter(new AdapterPortofolio(portofolios));
-        rv_portofolio.scrollToPosition(lst.size()-1);
+//        rv_portofolio.scrollToPosition(lst.size()-1);
         rv_portofolio.addItemDecoration(new DividerItemDecoration(getActivity(),0));
 //        rv_portofolio.setLayoutManager(new LinearLayoutManager(getActivity()));
     }

@@ -64,8 +64,9 @@
 
         <activity android:name=".EventActivity" />
         <activity android:name=".EventViewActivity" />
-        <activity android:name=".PendaftaranEventActivity" />
-        <activity android:name=".ViewPesertaEventActivity"></activity>
+        <activity android:name=".RegistActivity" />
+        <activity android:name=".ViewPesertaEventActivity" />
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>

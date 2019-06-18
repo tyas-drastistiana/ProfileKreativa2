@@ -60,15 +60,15 @@ public class AdapterGalery extends RecyclerView.Adapter<AdapterGalery.ViewHolder
         //Dialog
 
         myDialog = new Dialog(context);
-        myDialog.setContentView(R.layout.list_galery);
+        myDialog.setContentView(R.layout.activity_galery__view);
         myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         vh.item_galery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                TextView dialog_name = (TextView) myDialog.findViewById(R.id.txt_galery_ket);
-                ImageView dialog_img = (ImageView) myDialog.findViewById(R.id.img_galery_list);
+                TextView dialog_name = (TextView) myDialog.findViewById(R.id.txt_desk_view_galery);
+                ImageView dialog_img = (ImageView) myDialog.findViewById(R.id.IV_gelery_view);
 
                 dialog_name.setText(mData.get(vh.getAdapterPosition()).getDESK_GALLERY());
                 Glide.with(context).load(linkDatabase.linkurl()+mData.get(vh.getAdapterPosition()).getFOTO_GALLERY())

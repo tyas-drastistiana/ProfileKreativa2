@@ -84,15 +84,15 @@
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="20dp"
                 android:scrollbars="vertical">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/IV_organisasi"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="25dp"
+                    android:layout_margin="25dp"
                     android:src="@drawable/ic_menu_gallery"
                     android:contentDescription="@string/gambar"/>
             </android.support.constraint.ConstraintLayout>
@@ -120,6 +120,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_home"
         app:menu="@menu/activity_home_drawer" />
 
 

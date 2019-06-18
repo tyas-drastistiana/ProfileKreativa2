@@ -16,66 +16,39 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class SplashScreen extends AppCompatActivity {
-    private ImageView logo;
-    private int i=0;
-    private Timer timer;
-    public ProgressBar progressBar;
-    public TextView textView;
+    private ImageView ivkreativa;
+    private TextView tvkreativa, nama;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        logo=(ImageView)findViewById(R.id.logosplash);
-        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
-        progressBar.setProgress(0);
-        textView = (TextView) findViewById(R.id.text_view);
-        textView.setText(" ");
+        ivkreativa = (ImageView) findViewById(R.id.ivkreativa);
+        nama = (TextView) findViewById(R.id.txtkreativa1);
+        tvkreativa = (TextView) findViewById(R.id.txtkreativa2);
 
-        final long period = 10;
-        timer =  new Timer();
-        timer.schedule(new TimerTask() {
+        Animation myanim = AnimationUtils.loadAnimation(this,R.anim.mytransition);
+        ivkreativa.startAnimation(myanim);
+        nama.startAnimation(myanim);
+        tvkreativa.startAnimation(myanim);
+
+        final Intent i = new Intent(this, LoginActivity.class);
+        Thread timer = new Thread(){
             @Override
             public void run() {
-                if(i<10){
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            textView.setText(String.valueOf(i)+"%");
-                        }
-                    });
-                    progressBar.setProgress(i);
-                    i++;
-                }else{
-                    timer.cancel();
-                    Intent intent = new Intent(SplashScreen.this, HomeActivity.class);
-                    startActivity(intent);
+                try{
+                    sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                finally {
+                    startActivity(i);
                     finish();
                 }
             }
-        },0,period);
-
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//
-//
-//
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                Intent i = new Intent(SplashScreen.this,HomeActivity.class);
-//                startActivity(i);
-//                finish();
-//            }
-//        },splashTimeOut);
-
-//        Animation myanim = AnimationUtils.loadAnimation(this,R.anim.mysplashanimation);
-//        logo.startAnimation(myanim);
-
-//        progressBar.setMax(100);
-//        progressBar.setScaleY(3f);
-//        progressAnimation();
+        };
+        timer.start();
     }
 
 }

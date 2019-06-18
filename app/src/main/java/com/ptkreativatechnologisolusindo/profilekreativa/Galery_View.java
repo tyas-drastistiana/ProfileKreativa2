@@ -28,8 +28,8 @@ public class Galery_View extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_galery__view);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_galery_view);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_galery_view);
+//        setSupportActionBar(toolbar);
 
         et_desk = (TextView) findViewById(R.id.txt_desk_view_galery);
         gambar = (ImageView)findViewById(R.id.IV_gelery_view);
@@ -53,6 +53,6 @@ public class Galery_View extends AppCompatActivity {
         Picasso.with(this).load(linkDatabase.linkurl()+str_picture).into(gambar);
     }
 
-    public void onBack(View view) {finish();
-    }
+//    public void onBatal(View view) {finish();
+//    }
 }

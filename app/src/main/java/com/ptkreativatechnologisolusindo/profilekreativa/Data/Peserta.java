@@ -25,14 +25,6 @@ public class Peserta {
         this.NO_HP = NO_HP;
     }
 
-    public String getFOTO_BUKTI_PEMBAYARAN() {
-        return FOTO_BUKTI_PEMBAYARAN;
-    }
-
-    public void setFOTO_BUKTI_PEMBAYARAN(String FOTO_BUKTI_PEMBAYARAN) {
-        this.FOTO_BUKTI_PEMBAYARAN = FOTO_BUKTI_PEMBAYARAN;
-    }
-
     public String getPEND() {
         return PEND;
     }
@@ -65,5 +57,5 @@ public class Peserta {
         this.EMAIL_PESERTA = EMAIL_PESERTA;
     }
 
-    String ID_PESERTA, NAMA_PESERTA, NO_HP, FOTO_BUKTI_PEMBAYARAN, PEND, JENIS_KELAMIN, ALAMAT_PESERTA, EMAIL_PESERTA;
+    String ID_PESERTA, NAMA_PESERTA, NO_HP, PEND, JENIS_KELAMIN, ALAMAT_PESERTA, EMAIL_PESERTA;
 }
