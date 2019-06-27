@@ -66,7 +66,6 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
-                        android:textColor="@color/text_gray"
                         android:gravity="start"
                         android:textSize="18sp"
                         android:textStyle="bold"
@@ -78,7 +77,6 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
-                        android:textColor="@color/text_gray"
                         android:gravity="end"
                         android:textSize="13sp"
                         app:fontFamily="@font/roboto_thin" />
@@ -89,7 +87,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginLeft="2dp"
-                    android:background="@color/light_gray"
+                    android:background="@color/line"
                     android:layout_marginStart="5dp"/>
 
                 <TextView
@@ -99,7 +97,6 @@
                     android:layout_margin="4dp"
                     android:layout_weight="1"
                     android:gravity="start"
-                    android:textColor="@color/text_gray"
                     android:textSize="13sp"
                     app:fontFamily="@font/roboto_thin" />
                 <!--<ScrollView-->

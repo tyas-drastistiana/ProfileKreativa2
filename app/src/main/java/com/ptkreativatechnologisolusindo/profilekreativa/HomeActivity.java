@@ -1,5 +1,6 @@
 package com.ptkreativatechnologisolusindo.profilekreativa;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -10,6 +11,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -20,8 +22,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.ptkreativatechnologisolusindo.profilekreativa.Data.Peserta;
 import com.ptkreativatechnologisolusindo.profilekreativa.Fragment.BeritaFragment;
 import com.ptkreativatechnologisolusindo.profilekreativa.Fragment.HomeFragment;
 import com.ptkreativatechnologisolusindo.profilekreativa.Fragment.PortofolioFragment;
@@ -30,15 +42,28 @@ import com.ptkreativatechnologisolusindo.profilekreativa.Tab.SlidingTabLayout;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.List;
+
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 //    private SlidingTabLayout mSlidingTabLayout;;
 //    private ViewPager mViewPager;
 // private BottomBar bottomBar;
 
-    private RelativeLayout button;
+//    private AccountHeader.Result headerNavigationleft;
 
-
+//    private RelativeLayout button;
+    ImageView imageView;TextView username;
+    String EMAIL_PESERTA;
+    LinkDatabase linkDatabase;
+    private JsonArrayRequest arrayRequest;
+    private RequestQueue requestQueue;
+    private List<Peserta> lstData;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +72,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        imageView = findViewById(R.id.imageView);
+        username = findViewById(R.id.username);
+
+        linkDatabase = new LinkDatabase();
+
+        getViewEvent();
+
 
 //        button = (RelativeLayout)findViewById(R.id.button);
 
@@ -80,6 +113,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             //=======================================
 
+//            headerNavigationleft = new AccountHeader()
+//                    .withActivity(this)
+//                    .withCompactStyle(false)
+//                    .withSavedInstance(savedInstanceState)
+//                    .withHeaderBackground(R.drawable.side_nav_bar)
+//                    .addProfiles(
+//                            new ProfileDrawerItem().withName("Tyas").withEmail("kampus.com").withIcon(getResources().getDrawable(R.drawable.logo))
+//                    )
+//                    .build();
+
 //            HomeFragment fragment = new HomeFragment();
 //            FragmentManager manager = getSupportFragmentManager();
 //            manager.beginTransaction()
@@ -87,6 +130,54 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 //                    .addToBackStack(null)
 //                    .commit();
         }
+    }
+
+    private void getViewEvent() {
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
+        String url      =   linkDatabase.linkurl()+"peserta_event.php?operasi=view_peserta";
+//        arrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
+//            @Override
+//            public void onResponse(JSONArray response) {
+//                try {
+//                    JSONObject jsonObject = response.getJSONObject(0);
+////                    id = String.valueOf(jsonObject.getInt("ID_PROFIL"));
+////                    str_nama_perusahaan = jsonObject.getString("NAMA_PERUSAHAAN");
+//                    ID_EVENT = jsonObject.getString("ID_EVENT");
+//                    NAMA_EVENT = jsonObject.getString("NAMA_EVENT");
+//                    TGL_EVENT = jsonObject.getString("TGL_EVENT");
+//                    TEMPAT = jsonObject.getString("TEMPAT");
+//                    KAPISITAS = jsonObject.getString("KAPISITAS");
+//                    HTM = jsonObject.getString("HTM");
+//                    FOTO_EVENT = jsonObject.getString("FOTO_EVENT");
+//                    STATUS = jsonObject.getString("STATUS");
+//
+//                    gambar.setVisibility(View.VISIBLE);
+//                    Glide.with(EventViewActivity.this).load(linkDatabase.linkurl()+FOTO_EVENT).placeholder(R.drawable.thumbnail).into(gambar);
+//
+//                    nama.setText(NAMA_EVENT);
+//                    tgl.setText(TGL_EVENT);
+//                    tempat.setText(TEMPAT);
+//                    status_aktif.setText(STATUS);
+//                    kapasitas.setText(KAPISITAS);
+//                    htm.setText(HTM);
+//                    progressDialog.dismiss();
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                    Toast.makeText(getBaseContext(), e.toString(), Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                Log.d("error", error.toString());
+//            }
+//        }
+//        );
+//        requestQueue    =   Volley.newRequestQueue(this);
+//        requestQueue.add(arrayRequest);
     }
 
     @Override

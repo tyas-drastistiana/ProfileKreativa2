@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -17,9 +18,11 @@ import android.widget.TextView;
 import com.android.volley.RequestQueue;
 import com.bumptech.glide.Glide;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Event;
+import com.ptkreativatechnologisolusindo.profilekreativa.EventActivity;
 import com.ptkreativatechnologisolusindo.profilekreativa.EventViewActivity;
 import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
 import com.ptkreativatechnologisolusindo.profilekreativa.R;
+import com.ptkreativatechnologisolusindo.profilekreativa.ViewPesertaEventActivity;
 
 import java.util.List;
 
@@ -93,6 +96,21 @@ public class AdapterEvent extends RecyclerView.Adapter<AdapterEvent.ViewHolder>{
         holder.judul.setText(NAMA_EVENT);
         Glide.with(context).load(linkDatabase.linkurl()+FOTO_EVENT).override(350, 200).placeholder(R.drawable.thumbnail).into(holder.gambar);
 
+        holder.daftar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent event = new Intent(context, ViewPesertaEventActivity.class);
+                event.putExtra("ID_EVENT", ID_EVENT);
+                event.putExtra("NAMA_EVENT", NAMA_EVENT);
+                event.putExtra("TGL_EVENT", TGL_EVENT);
+                event.putExtra("TEMPAT", TEMPAT);
+                event.putExtra("KAPISITAS", KAPISITAS);
+                event.putExtra("HTM", HTM);
+                event.putExtra("FOTO_EVENT", FOTO_EVENT);
+                event.putExtra("STATUS", STATUS);
+                context.startActivity(event);
+            }
+        });
 //        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -119,6 +137,7 @@ public class AdapterEvent extends RecyclerView.Adapter<AdapterEvent.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView gambar;
         public TextView judul;
+        public Button daftar;
         public LinearLayout linearLayout, l3;
 
         public ViewHolder(View itemView) {
@@ -127,6 +146,7 @@ public class AdapterEvent extends RecyclerView.Adapter<AdapterEvent.ViewHolder>{
             judul = itemView.findViewById(R.id.txt_event_ket);
             linearLayout = itemView.findViewById(R.id.li_event);
             l3 = itemView.findViewById(R.id.view_event);
+            daftar = itemView.findViewById(R.id.join_event);
         }
     }
 }

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +19,10 @@ import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.bumptech.glide.Glide;
+import com.github.chrisbanes.photoview.PhotoView;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Berita;
 import com.ptkreativatechnologisolusindo.profilekreativa.Fragment.Berita_View;
+import com.ptkreativatechnologisolusindo.profilekreativa.Fragment.HomeFragment;
 import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
 import com.ptkreativatechnologisolusindo.profilekreativa.R;
 import com.squareup.picasso.Picasso;
@@ -57,7 +60,7 @@ public class AdapterBerita  extends RecyclerView.Adapter<AdapterBerita .ViewHold
 //     */
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public LinearLayout linearLayout;
-        public ImageView gambar;
+        public ImageView gambar, pop_gambar;
         public TextView judul_berita, desk_berita, tanggal_berita;
         public ViewHolder( View v) {
             super(v);
@@ -66,35 +69,17 @@ public class AdapterBerita  extends RecyclerView.Adapter<AdapterBerita .ViewHold
             judul_berita = (TextView) v.findViewById(R.id.txt_berita_judul);
             desk_berita = (TextView) v.findViewById(R.id.txt_berita_desk);
             tanggal_berita = (TextView) v.findViewById(R.id.txt_berita_tgl);
-
-
+            pop_gambar = (ImageView) v.findViewById(R.id.ivicon);
         }
 
     }
 
     @Override
-    public AdapterBerita.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+    public AdapterBerita.ViewHolder onCreateViewHolder(ViewGroup viewGroup, final int viewType) {
         // Create a new view.
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.list_berita, viewGroup, false);
         final ViewHolder vh = new ViewHolder(v);
-
-//        myDialog = new Dialog(context);
-//        myDialog.setContentView(R.layout.list_berita);
-//        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//
-//        vh.gambar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                ImageView dialog_img = (ImageView) myDialog.findViewById(R.id.dialog_gelery_zoom);
-//
-////                dialog_img.setImageResource(mData.get(vh.getAdapterPosition()).getFOTO_GALLERY());
-//
-//                Toast.makeText(context, "Test Click"+String.valueOf(vh.getAdapterPosition()),Toast.LENGTH_SHORT).show();
-//                myDialog.show();
-//            }
-//        });
 
         return vh;
     }

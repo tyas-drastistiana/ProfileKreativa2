@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.ptkreativatechnologisolusindo.profilekreativa.Data.Event;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Peserta;
 
 import java.util.List;
@@ -31,7 +32,8 @@ public class ViewPesertaEventActivity extends AppCompatActivity {
     LinkDatabase linkDatabase;
     private JsonArrayRequest arrayRequest;
     private RequestQueue requestQueue;
-    private List<Peserta> lstData;
+//    private List<Peserta> lstData;
+    private List<Event> lstDataevent;
     ProgressDialog progressDialog;
     String time2, time;
     boolean status=false;
@@ -41,6 +43,29 @@ public class ViewPesertaEventActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_peserta_event);
+
+        event_nama = (TextView) findViewById(R.id.ET_Eevent_nama);
+        event_tglpel = (TextView) findViewById(R.id.ET_Eevent_tgl);
+        event_tempat = (TextView) findViewById(R.id.ET_Eevent_tempat);
+        event_htm = (TextView) findViewById(R.id.ET_Eevent_htm);
+
+        linkDatabase = new LinkDatabase();
+
+        ID_EVENT = getIntent().getStringExtra("ID_EVENT");
+        NAMA_EVENT = getIntent().getStringExtra("NAMA_EVENT");
+        TGL_EVENT = getIntent().getStringExtra("TGL_EVENT");
+        TEMPAT = getIntent().getStringExtra("TEMPAT");
+        KAPISITAS = getIntent().getStringExtra("KAPISITAS");
+        HTM = getIntent().getStringExtra("HTM");
+        STATUS = getIntent().getStringExtra("STATUS");
+
+
+        event_nama.setText(NAMA_EVENT);
+        event_tglpel.setText(TGL_EVENT);
+        event_tempat.setText(TEMPAT);
+        event_htm.setText(HTM);
+
+
     }
 
     public  void onBack(View view){

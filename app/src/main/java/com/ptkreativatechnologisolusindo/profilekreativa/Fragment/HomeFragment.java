@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +25,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.github.chrisbanes.photoview.PhotoView;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
@@ -112,6 +115,22 @@ public class HomeFragment extends Fragment {
                     JSONObject jsonObject = response.getJSONObject(0);
                     url_img = linkDatabase.linkurl()+jsonObject.getString("URL_LOGO");
                     Picasso.with(getContext()).load(url_img).placeholder(R.drawable.thumbnail).into(logo);
+                    logo.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
+                            View mView = getLayoutInflater().inflate(R.layout.popup_image, null);
+                            PhotoView photoView = mView.findViewById(R.id.ivicon);
+
+//                            photoView.setImageResource(R.drawable.gallery);
+                            photoView.setVisibility(View.VISIBLE);
+                            Glide.with(HomeFragment.this).load(url_img).placeholder(R.drawable.thumbnail).into(photoView);
+
+                            mBuilder.setView(mView);
+                            AlertDialog mDialog = mBuilder.create();
+                            mDialog.show();
+                        }
+                    });
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();

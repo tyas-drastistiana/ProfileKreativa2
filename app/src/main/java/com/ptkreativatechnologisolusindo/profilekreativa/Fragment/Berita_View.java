@@ -32,6 +32,7 @@ public class Berita_View extends AppCompatActivity {
         setContentView(R.layout.activity_berita__view);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_berita_view);
+        toolbar.setTitle(str_judul);
         setSupportActionBar(toolbar);
 
         et_desk = (TextView) findViewById(R.id.textView9);

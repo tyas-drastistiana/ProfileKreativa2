@@ -47,7 +47,6 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:elevation="4dp"
-            app:title="@string/organisasi"
             app:titleTextColor="@color/white">
 
         </android.support.v7.widget.Toolbar>
@@ -60,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="60dp"
         android:text="Judul Berita"
         android:textSize="20sp"
         android:textStyle="bold" />
