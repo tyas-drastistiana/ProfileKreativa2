@@ -229,6 +229,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }else if (id == R.id.nav_event){
             Intent event = new Intent(HomeActivity.this, EventActivity.class);
             startActivity(event);
+        }else if (id == R.id.nav_profile){
+            Intent profile = new Intent(HomeActivity.this, ProfileActivity.class);
+            startActivity(profile);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

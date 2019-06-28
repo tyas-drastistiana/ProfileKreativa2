@@ -43,5 +43,15 @@
                 android:icon="@drawable/product_2"/>
         </menu>
     </item>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/gallery"
+            android:title="My Profile"/>
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/gallery"
+            android:title="Log Out"/>
+    </group>
     
 </menu>
