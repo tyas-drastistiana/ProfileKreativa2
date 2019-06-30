@@ -48,6 +48,7 @@ public class ProfileActivity extends AppCompatActivity {
         pend = (TextView) findViewById(R.id.TV_event_pend);
         email = (TextView) findViewById(R.id.ET_event_email);
 
+        dbHelper = new DataHelper(this);
         linkDatabase = new LinkDatabase();
 //        str_nama = new String();
 //        str_alamat = new String();
