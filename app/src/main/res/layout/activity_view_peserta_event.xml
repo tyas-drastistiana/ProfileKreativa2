@@ -158,7 +158,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:textSize="18dp"
-            android:text="Jenis Kelamin :"/>
+            android:text="Jenis Kelamin :"
+            android:id="@+id/jlk"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -166,7 +167,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:textSize="18dp"
-            android:text="Pendidikan Terakhir"/>
+            android:text="Pendidikan Terakhir"
+            android:id="@+id/pend"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
