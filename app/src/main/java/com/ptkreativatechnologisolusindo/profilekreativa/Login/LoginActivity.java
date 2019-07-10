@@ -1,17 +1,15 @@
-package com.ptkreativatechnologisolusindo.profilekreativa;
+package com.ptkreativatechnologisolusindo.profilekreativa.Login;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.media.session.MediaSessionManager;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,8 +22,11 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Peserta;
-import com.ptkreativatechnologisolusindo.profilekreativa.Data.Product;
-import com.ptkreativatechnologisolusindo.profilekreativa.session.SessionManager;
+import com.ptkreativatechnologisolusindo.profilekreativa.DataHelper;
+import com.ptkreativatechnologisolusindo.profilekreativa.HomeActivity;
+import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
+import com.ptkreativatechnologisolusindo.profilekreativa.R;
+import com.ptkreativatechnologisolusindo.profilekreativa.Session.SessionManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,6 +50,8 @@ public class LoginActivity extends AppCompatActivity {
     DataHelper dbHelper;
 
     ProgressDialog progressDialog;
+
+    public static LoginActivity ma;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -212,6 +215,11 @@ public class LoginActivity extends AppCompatActivity {
         }
         c.close();
         db2.close();
+    }
+
+    public void lupaPWD(View view) {
+        Intent intent = new Intent(LoginActivity.this, LupaPasswordActivity.class);
+        startActivity(intent);
     }
 
 //    void updatee(){

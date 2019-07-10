@@ -57,7 +57,6 @@
                             android:layout_margin="4dp"
                             android:layout_weight="1"
                             android:textAlignment="textEnd"
-                            android:textColor="@color/text_gray"
                             app:fontFamily="@font/roboto_thin" />
 
                         <TextView
@@ -68,7 +67,6 @@
                             android:layout_margin="4dp"
                             android:layout_weight="1"
                             android:textAlignment="center"
-                            android:textColor="@color/text_gray"
                             android:textSize="16sp"
                             android:textStyle="bold"
                             app:fontFamily="@font/montserrat" />
@@ -109,26 +107,25 @@
                             android:orientation="vertical"
                             android:background="@color/light_gray">
 
-                            <ImageView
-                                android:id="@+id/list_port_logo"
-                                android:layout_width="250dp"
-                                android:layout_height="250dp"
-                                android:layout_gravity="center"
-                                android:scaleType="centerCrop"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginBottom="10dp"
-                                android:padding="10dp"
-                                android:layout_marginRight="10dp"
-                                android:src="@drawable/ic_menu_gallery"
-                                android:contentDescription="@string/gambar"/>
+                            <!--<ImageView-->
+                                <!--android:id="@+id/list_port_logo"-->
+                                <!--android:layout_width="250dp"-->
+                                <!--android:layout_height="250dp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:scaleType="centerCrop"-->
+                                <!--android:layout_marginLeft="10dp"-->
+                                <!--android:layout_marginTop="10dp"-->
+                                <!--android:layout_marginBottom="10dp"-->
+                                <!--android:padding="10dp"-->
+                                <!--android:layout_marginRight="10dp"-->
+                                <!--android:src="@drawable/ic_menu_gallery"-->
+                                <!--android:contentDescription="@string/gambar"/>-->
 
                             <TextView
                                 android:id="@+id/txt_desk"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:scrollbars="vertical"
-                                android:background="@color/light_gray"
                                 android:textAlignment="center"
                                 android:textSize="20sp"
                                 app:fontFamily="@font/roboto_thin" />

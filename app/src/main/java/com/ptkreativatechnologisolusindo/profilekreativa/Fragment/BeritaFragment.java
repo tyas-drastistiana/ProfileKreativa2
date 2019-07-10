@@ -2,10 +2,8 @@ package com.ptkreativatechnologisolusindo.profilekreativa.Fragment;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -21,8 +19,7 @@ import com.android.volley.toolbox.Volley;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Berita;
 import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
 import com.ptkreativatechnologisolusindo.profilekreativa.R;
-import com.ptkreativatechnologisolusindo.profilekreativa.adapter.AdapterBerita;
-import com.ptkreativatechnologisolusindo.profilekreativa.Fragment.BeritaFragment;
+import com.ptkreativatechnologisolusindo.profilekreativa.Adapter.AdapterBerita;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -1,4 +1,4 @@
-package com.ptkreativatechnologisolusindo.profilekreativa;
+package com.ptkreativatechnologisolusindo.profilekreativa.Fasilitas;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -15,15 +15,23 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.ptkreativatechnologisolusindo.profilekreativa.adapter.AdapterFasilitas;
+import com.ptkreativatechnologisolusindo.profilekreativa.Adapter.AdapterFasilitas;
+import com.ptkreativatechnologisolusindo.profilekreativa.ContactActivity;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Fasilitas;
+import com.ptkreativatechnologisolusindo.profilekreativa.Event.EventActivity;
+import com.ptkreativatechnologisolusindo.profilekreativa.GaleryActivity;
+import com.ptkreativatechnologisolusindo.profilekreativa.HomeActivity;
+import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
+import com.ptkreativatechnologisolusindo.profilekreativa.Organisation;
+import com.ptkreativatechnologisolusindo.profilekreativa.ProductActivity;
+import com.ptkreativatechnologisolusindo.profilekreativa.R;
+import com.ptkreativatechnologisolusindo.profilekreativa.VisiMisiActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -60,6 +68,27 @@ public class FasilitasActivity extends AppCompatActivity implements NavigationVi
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_fasilitas);
         navigationView.setNavigationItemSelectedListener(FasilitasActivity.this);
+
+
+
+//        final SwipeRefreshLayout swipeRefreshLayout =(SwipeRefreshLayout) findViewById(R.id.swipelayout);
+//        swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary,R.color.colorPrimaryDark,R.color.color1Accent);
+//        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                swipeRefreshLayout.setRefreshing(true);
+//                (new Handler()).postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        swipeRefreshLayout.setRefreshing(false);
+//                        initDataset();
+//
+//                    }
+//
+//                });
+//            }
+//        });
+
 
 
         rv_fasilitas = findViewById(R.id.RV_fasilitas);

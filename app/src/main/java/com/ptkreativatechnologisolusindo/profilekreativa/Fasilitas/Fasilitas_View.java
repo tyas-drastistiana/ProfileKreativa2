@@ -1,4 +1,4 @@
-package com.ptkreativatechnologisolusindo.profilekreativa;
+package com.ptkreativatechnologisolusindo.profilekreativa.Fasilitas;
 
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
+import com.ptkreativatechnologisolusindo.profilekreativa.R;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;

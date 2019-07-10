@@ -1,11 +1,10 @@
-package com.ptkreativatechnologisolusindo.profilekreativa.adapter;
+package com.ptkreativatechnologisolusindo.profilekreativa.Adapter;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,11 +17,9 @@ import android.widget.TextView;
 import com.android.volley.RequestQueue;
 import com.bumptech.glide.Glide;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Event;
-import com.ptkreativatechnologisolusindo.profilekreativa.EventActivity;
-import com.ptkreativatechnologisolusindo.profilekreativa.EventViewActivity;
 import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
 import com.ptkreativatechnologisolusindo.profilekreativa.R;
-import com.ptkreativatechnologisolusindo.profilekreativa.ViewPesertaEventActivity;
+import com.ptkreativatechnologisolusindo.profilekreativa.Event.ViewPesertaEventActivity;
 
 import java.util.List;
 

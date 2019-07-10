@@ -1,11 +1,11 @@
-package com.ptkreativatechnologisolusindo.profilekreativa.session;
+package com.ptkreativatechnologisolusindo.profilekreativa.Session;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
 import com.ptkreativatechnologisolusindo.profilekreativa.HomeActivity;
-import com.ptkreativatechnologisolusindo.profilekreativa.LoginActivity;
+import com.ptkreativatechnologisolusindo.profilekreativa.Login.LoginActivity;
 
 import java.util.HashMap;
 

@@ -1,20 +1,19 @@
-package com.ptkreativatechnologisolusindo.profilekreativa;
+package com.ptkreativatechnologisolusindo.profilekreativa.Login;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -25,8 +24,9 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Peserta;
+import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
+import com.ptkreativatechnologisolusindo.profilekreativa.R;
 
-import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -45,18 +45,30 @@ public class RegistActivity extends AppCompatActivity {
     Spinner SP_event_pend, SP_event_kel;
     private final int IMG_REQUEST =1;
     public Bitmap bitmap;
+    ImageView iv_foto;
     ProgressDialog progressDialog;
     String time2, time;
     boolean status=false;
 
     private Button bt_simpan;
 
+    public static RegistActivity ma;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regist);
+        
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        setTitle("Form Registrasi");
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
+
+//        iv_foto = findViewById(R.id.aa_thumbnail);
         nama_peserta = findViewById(R.id.ET_event_nama_peserta);
         alamat = findViewById(R.id.ET_event_alamat);
         hp = findViewById(R.id.ET_event_hp);
@@ -78,8 +90,28 @@ public class RegistActivity extends AppCompatActivity {
         EMAIL_PESERTA = new String();
         PASSWORD = new String();
 
-    }
+//        final CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsingToolbarLayout);
+//        AppBarLayout appBarLayout = findViewById(R.id.app_bar_layout);
+//        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+//            boolean isShow = true;
+//            int scrollRange = -1;
+//
+//            @Override
+//            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+//                if (scrollRange == -1) {
+//                    scrollRange = appBarLayout.getTotalScrollRange();
+//                }
+//                if (scrollRange + verticalOffset == 0) {
+//                    collapsingToolbarLayout.setTitle("Form Registrasi");
+//                    isShow = true;
+//                } else if(isShow) {
+//                    collapsingToolbarLayout.setTitle(" ");//carefull there should a space between double quote otherwise it wont work
+//                    isShow = false;
+//                }
+//            }
+//        });
 
+    }
 
     public void onSave(View view){
         progressDialog = new ProgressDialog(this);
@@ -93,7 +125,8 @@ public class RegistActivity extends AppCompatActivity {
                 progressDialog.dismiss();
                 Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_LONG).show();
                 if(response.toLowerCase().toString().equals("upload data berhasil")){
-//                    ViewPesertaEventActivity.ma.reload();
+                    Intent intent = new Intent(RegistActivity.this, LoginActivity.class);
+                    startActivity(intent);
                     finish();
                 }
             }
@@ -128,35 +161,9 @@ public class RegistActivity extends AppCompatActivity {
 
     }
 
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//
-//        super.onActivityResult(requestCode, resultCode, data);
-//        bitmap = com.mvc.imagepicker.ImagePicker.getImageFromResult(this, requestCode, resultCode, data);
-//        if(bitmap != null){
-//            IV_Tevent.setVisibility(View.VISIBLE);
-//            IV_Tevent.setImageBitmap(bitmap);
-//        }
-//    }
-
-//    @RequiresApi(api = Build.VERSION_CODES.FROYO)
-//    private String IV_Tevent(Bitmap bitmap){
-//        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-//        bitmap.compress(Bitmap.CompressFormat.JPEG, 100,  byteArrayOutputStream);
-//        byte [] imgbytes = byteArrayOutputStream.toByteArray();
-//
-//        return Base64.encodeToString(imgbytes, Base64.DEFAULT);
-//    }
-
-//    public void processfinish(String output) {
-//        if(output.equals("Update Data Berhasil")){
-//            Toast.makeText(getApplicationContext(), "Data Berhasil di Update", Toast.LENGTH_LONG).show();
-//            ViewPesertaEventActivity ViewPesertaEventActivity = new ViewPesertaEventActivity();
-//            ViewPesertaEventActivity.ma.reload();
-//            finish();
-//        } else {
-//            Toast.makeText(getBaseContext(), output, Toast.LENGTH_LONG).show();
-//        }
-//        progressDialog.dismiss();
-//    }
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
+    }
 }

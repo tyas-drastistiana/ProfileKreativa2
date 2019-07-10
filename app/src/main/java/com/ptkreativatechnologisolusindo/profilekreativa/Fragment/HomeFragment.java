@@ -34,6 +34,7 @@ import com.google.android.youtube.player.YouTubePlayerFragment;
 import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Profil;
+import com.ptkreativatechnologisolusindo.profilekreativa.FullScreenActivity;
 import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
 import com.ptkreativatechnologisolusindo.profilekreativa.R;
 import com.squareup.picasso.Picasso;
@@ -77,6 +78,9 @@ public class HomeFragment extends Fragment {
         id = new String();
 
 
+        VIDEO_ID = new String();
+        linkDatabase = new LinkDatabase();
+
     }
 
 
@@ -94,8 +98,6 @@ public class HomeFragment extends Fragment {
 
 
 
-        VIDEO_ID = new String();
-        linkDatabase = new LinkDatabase();
         youTubePlayerFragment = YouTubePlayerSupportFragment.newInstance();
         transaction = getChildFragmentManager().beginTransaction();
         transaction.add(R.id.youtobe_layout, youTubePlayerFragment).commit();
@@ -114,6 +116,7 @@ public class HomeFragment extends Fragment {
                 try {
                     JSONObject jsonObject = response.getJSONObject(0);
                     url_img = linkDatabase.linkurl()+jsonObject.getString("URL_LOGO");
+//                    FOTO_EVENT = Intent.getIntent().getStringExtra("URL_LOGO");
                     Picasso.with(getContext()).load(url_img).placeholder(R.drawable.thumbnail).into(logo);
                     logo.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -124,11 +127,16 @@ public class HomeFragment extends Fragment {
 
 //                            photoView.setImageResource(R.drawable.gallery);
                             photoView.setVisibility(View.VISIBLE);
-                            Glide.with(HomeFragment.this).load(url_img).placeholder(R.drawable.thumbnail).into(photoView);
+                            Glide.with(HomeFragment.this).load(url_img).placeholder(R.drawable.thumbnail).override(100,100).into(photoView);
 
                             mBuilder.setView(mView);
                             AlertDialog mDialog = mBuilder.create();
                             mDialog.show();
+
+//                            Intent intent = new Intent(getContext(), FullScreenActivity.class);
+//                            intent.putExtra("link", url_img);
+//                            startActivity(intent);
+
                         }
                     });
                 } catch (JSONException e) {

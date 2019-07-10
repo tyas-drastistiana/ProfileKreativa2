@@ -9,7 +9,7 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     android:scrollbars="vertical"
-    tools:context=".FasilitasActivity">
+    tools:context=".Fasilitas.FasilitasActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

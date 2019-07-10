@@ -1,13 +1,9 @@
-package com.ptkreativatechnologisolusindo.profilekreativa.adapter;
+package com.ptkreativatechnologisolusindo.profilekreativa.Adapter;
 
 
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,17 +11,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.bumptech.glide.Glide;
-import com.github.chrisbanes.photoview.PhotoView;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Berita;
 import com.ptkreativatechnologisolusindo.profilekreativa.Fragment.Berita_View;
-import com.ptkreativatechnologisolusindo.profilekreativa.Fragment.HomeFragment;
 import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
 import com.ptkreativatechnologisolusindo.profilekreativa.R;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.ptkreativatechnologisolusindo.profilekreativa;
+package com.ptkreativatechnologisolusindo.profilekreativa.Event;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -10,7 +10,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -21,8 +20,17 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.ptkreativatechnologisolusindo.profilekreativa.ContactActivity;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Event;
-import com.ptkreativatechnologisolusindo.profilekreativa.adapter.AdapterEvent;
+import com.ptkreativatechnologisolusindo.profilekreativa.Fasilitas.FasilitasActivity;
+import com.ptkreativatechnologisolusindo.profilekreativa.GaleryActivity;
+import com.ptkreativatechnologisolusindo.profilekreativa.HomeActivity;
+import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
+import com.ptkreativatechnologisolusindo.profilekreativa.Organisation;
+import com.ptkreativatechnologisolusindo.profilekreativa.ProductActivity;
+import com.ptkreativatechnologisolusindo.profilekreativa.R;
+import com.ptkreativatechnologisolusindo.profilekreativa.VisiMisiActivity;
+import com.ptkreativatechnologisolusindo.profilekreativa.Adapter.AdapterEvent;
 
 import org.json.JSONArray;
 import org.json.JSONException;

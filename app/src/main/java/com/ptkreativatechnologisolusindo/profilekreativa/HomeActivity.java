@@ -1,50 +1,28 @@
 package com.ptkreativatechnologisolusindo.profilekreativa;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
-import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.Volley;
-import com.bumptech.glide.Glide;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Peserta;
+import com.ptkreativatechnologisolusindo.profilekreativa.Fasilitas.FasilitasActivity;
 import com.ptkreativatechnologisolusindo.profilekreativa.Fragment.BeritaFragment;
 import com.ptkreativatechnologisolusindo.profilekreativa.Fragment.HomeFragment;
 import com.ptkreativatechnologisolusindo.profilekreativa.Fragment.PortofolioFragment;
-import com.ptkreativatechnologisolusindo.profilekreativa.Tab.MyAdapter;
-import com.ptkreativatechnologisolusindo.profilekreativa.Tab.SlidingTabLayout;
-import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.OnTabSelectListener;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.ptkreativatechnologisolusindo.profilekreativa.Event.EventActivity;
 
 import java.util.List;
 
@@ -63,7 +41,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private JsonArrayRequest arrayRequest;
     private RequestQueue requestQueue;
     private List<Peserta> lstData;
-    ProgressDialog progressDialog;
+//    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,10 +111,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void getViewEvent() {
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setCanceledOnTouchOutside(false);
-        progressDialog.setMessage("Loading...");
-        progressDialog.show();
+//        progressDialog = new ProgressDialog(this);
+//        progressDialog.setCanceledOnTouchOutside(false);
+//        progressDialog.setMessage("Loading...");
+//        progressDialog.show();
         String url      =   linkDatabase.linkurl()+"peserta_event.php?operasi=view_peserta";
 //        arrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
 //            @Override

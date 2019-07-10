@@ -1,8 +1,8 @@
-package com.ptkreativatechnologisolusindo.profilekreativa.adapter;
+package com.ptkreativatechnologisolusindo.profilekreativa.Adapter;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
@@ -20,9 +19,9 @@ import com.github.aakira.expandablelayout.ExpandableLayoutListenerAdapter;
 import com.github.aakira.expandablelayout.ExpandableLinearLayout;
 import com.github.aakira.expandablelayout.Utils;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Portofolio;
+import com.ptkreativatechnologisolusindo.profilekreativa.FullScreenActivity;
 import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
 import com.ptkreativatechnologisolusindo.profilekreativa.R;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -58,7 +57,7 @@ public class AdapterPortofolio extends RecyclerView.Adapter<AdapterPortofolio.Vi
             buttonLayout = v.findViewById(R.id.button);
             expandableLayout = v.findViewById(R.id.expandableLayout);
 
-            list_port_logo = (ImageView)itemView.findViewById(R.id.list_port_logo);
+//            list_port_logo = (ImageView)itemView.findViewById(R.id.list_port_logo);
             imageView=(ImageView)itemView.findViewById(R.id.img_portofolio_logo);
             tv_judul=(TextView)itemView.findViewById(R.id.txt_title);
             tv_desk=(TextView)itemView.findViewById(R.id.txt_desk);
@@ -111,6 +110,14 @@ public class AdapterPortofolio extends RecyclerView.Adapter<AdapterPortofolio.Vi
 //        gambar.setVisibility(View.VISIBLE);
 
         Glide.with(context).load(linkDatabase.linkurl()+picture).override(80, 80).into(holder.imageView);
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, FullScreenActivity.class);
+                intent.putExtra("picture", picture);
+                context.startActivity(intent);
+            }
+        });
 
 //        Picasso.with(context).load(linkDatabase.linkurl()+picture).resize(250, 250).into(holder.list_port_logo);
 //        Picasso.get().load(linkDatabase.linkurl()+picture).placeholder(R.drawable.thumbnail).into(holder.imageView);

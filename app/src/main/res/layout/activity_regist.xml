@@ -1,45 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RegistActivity"
-    android:background="@color/colorPrimary">
+    tools:context=".Login.RegistActivity"
+    android:background="@color/colorS_Accent">
 
-    <ScrollView
+    <!--<android.support.design.widget.AppBarLayout-->
+        <!--android:id="@+id/app_bar_layout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+        <!--android:fitsSystemWindows="true"-->
+        <!--&gt;-->
+
+        <!--<android.support.design.widget.CollapsingToolbarLayout-->
+            <!--android:id="@+id/collapsingToolbarLayout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="180dp"-->
+            <!--app:layout_scrollFlags="scroll|exitUntilCollapsed"-->
+            <!--app:contentScrim="?attr/colorPrimary"-->
+            <!--app:expandedTitleTextAppearance="@android:color/transparent"-->
+            <!--android:fitsSystemWindows="true"-->
+            <!--&gt;-->
+
+            <!--<ImageView-->
+                <!--android:id="@+id/aa_thumbnail"-->
+                <!--app:layout_collapseMode="parallax"-->
+                <!--android:contentDescription="@string/app_name"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:src="@drawable/side_nav_bar"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="180dp" />-->
+
+            <!--<android.support.v7.widget.Toolbar-->
+                <!--android:id="@+id/toolbar"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="?attr/actionBarSize"-->
+                <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+                <!--android:background="@drawable/side_nav_bar"-->
+                <!--app:layout_collapseMode="pin"-->
+                <!--/>-->
+
+
+        <!--</android.support.design.widget.CollapsingToolbarLayout>-->
+
+
+
+    <!--</android.support.design.widget.AppBarLayout>-->
+
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="4dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:background="@drawable/side_nav_bar"
+            app:layout_collapseMode="pin"
+            app:titleTextColor="@color/colorS_Accent"
+            app:theme="@style/CustomActionBar"
+            />
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent" >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:scrollbars="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="FORM DATA DIRI "
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:textColor="@color/colorS_Accent"
-                android:fontFamily="@font/montserrat"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="20dp"/>
-
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="FORM DATA DIRI "-->
+                <!--android:layout_gravity="center"-->
+                <!--android:textAlignment="center"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textSize="20dp"-->
+                <!--android:textColor="@color/colorPrimary"-->
+                <!--app:fontFamily="@font/montserrat_bold"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginRight="20dp"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:layout_marginBottom="20dp"/>-->
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginRight="20dp">
-
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -52,7 +110,6 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp">
-
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -65,7 +122,6 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp">
-
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -87,32 +143,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
                 android:textColorHint="@color/colorPrimary"
                 android:textColor="@color/colorPrimary"
                 android:fontFamily="@font/roboto_thin"
                 android:entries="@array/kel">
-
             </Spinner>
-            <!--<RadioGroup-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="10dp"-->
-            <!--android:id="@+id/rg_kel"-->
-            <!--android:layout_marginRight="20dp"-->
-            <!--android:layout_marginLeft="20dp">-->
-
-            <!--<RadioButton-->
-            <!--android:id="@+id/lk"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Laki - Laki"/>-->
-            <!--<RadioButton-->
-            <!--android:id="@+id/pr"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Perempuan"/>-->
-
-            <!--</RadioGroup>-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -127,6 +163,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_thin"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="20dp"
                 android:entries="@array/status">
 
@@ -136,8 +173,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
-                android:textColorHint="@color/colorS_Accent"
-                android:textColor="@color/colorS_Accent"
                 android:layout_marginRight="20dp">
 
                 <android.support.design.widget.TextInputEditText
@@ -152,8 +187,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
-                android:textColorHint="@color/colorS_Accent"
-                android:textColor="@color/colorS_Accent"
                 android:layout_marginRight="20dp">
 
                 <android.support.design.widget.TextInputEditText
@@ -169,8 +202,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SIMPAN"
-                android:textColor="@color/colorPrimary"
-                android:background="@drawable/bg_input_login"
+                android:textColor="@color/colorS_Accent"
+                android:background="@drawable/bg_login"
                 android:fontFamily="@font/montserrat_bold"
                 android:layout_gravity="center"
                 android:onClick="onSave"
@@ -178,7 +211,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="20dp"/>
-        </LinearLayout>
-    </ScrollView>
 
-</android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

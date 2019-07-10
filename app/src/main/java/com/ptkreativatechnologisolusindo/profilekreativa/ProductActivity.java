@@ -15,7 +15,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -23,7 +22,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Product;
-import com.ptkreativatechnologisolusindo.profilekreativa.adapter.AdapterProduct;
+import com.ptkreativatechnologisolusindo.profilekreativa.Adapter.AdapterProduct;
+import com.ptkreativatechnologisolusindo.profilekreativa.Event.EventActivity;
+import com.ptkreativatechnologisolusindo.profilekreativa.Fasilitas.FasilitasActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;

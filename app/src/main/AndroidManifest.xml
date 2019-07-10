@@ -42,7 +42,7 @@
             android:name=".ProductActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".FasilitasActivity"
+            android:name=".Fasilitas.FasilitasActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".GaleryActivity"
@@ -55,19 +55,26 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Product_view" />
         <activity android:name=".Galery_View" />
-        <activity android:name=".Fasilitas_View" />
+        <activity android:name=".Fasilitas.Fasilitas_View" />
         <activity android:name=".Fragment.Berita_View" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".EventActivity" />
-        <activity android:name=".EventViewActivity" />
-        <activity android:name=".RegistActivity" />
-        <activity android:name=".ViewPesertaEventActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".Event.EventActivity" />
+        <activity android:name=".Event.EventViewActivity" />
+        <activity android:name=".Login.RegistActivity" />
+        <activity android:name=".Event.ViewPesertaEventActivity" />
+        <activity
+            android:name=".Login.LoginActivity"
+            android:noHistory="true" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".FullScreenActivity" />
+        <activity android:name=".Login.LupaPasswordActivity" />
+        <activity android:name=".Login.KonfirmasiActivity" />
+        <activity android:name=".Login.GantiPasswordActivity" />
+        <activity android:name=".Event.DetailPesertaActivity"></activity>
     </application>
 
 </manifest>

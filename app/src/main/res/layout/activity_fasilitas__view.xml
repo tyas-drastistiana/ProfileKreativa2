@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fasilitas_View"
+    tools:context=".Fasilitas.Fasilitas_View"
     android:background="@color/gray_baground"
     android:orientation="vertical"
     android:scrollbars="vertical">

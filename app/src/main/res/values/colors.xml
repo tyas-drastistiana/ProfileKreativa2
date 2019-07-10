@@ -8,6 +8,7 @@
     <color name="colorS_PrimaryDark">#afb0af</color>
     <color name="colorS_Accent">#ffffff</color>
 
+    <color name="black">#000000</color>
     <color name="gray_900">#222322</color>
     <color name="gray_800">#434444</color>
     <color name="gray_700">#626363</color>
@@ -105,7 +106,6 @@
     <color name="text_gray">#fafafa</color>
     <color name="white">#ffffff</color>
     <color name="trans">#00FFFFFF</color>
-    <color name="black">#1c2733</color>
     <color name="abu2">#ececec</color>
     <color name="recyc">#e77c8083</color>
     <color name="line">#716363</color>

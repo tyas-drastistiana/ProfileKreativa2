@@ -1,6 +1,5 @@
-package com.ptkreativatechnologisolusindo.profilekreativa.adapter;
+package com.ptkreativatechnologisolusindo.profilekreativa.Adapter;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -12,11 +11,10 @@ import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.bumptech.glide.Glide;
-import com.ptkreativatechnologisolusindo.profilekreativa.Fasilitas_View;
+import com.ptkreativatechnologisolusindo.profilekreativa.Fasilitas.Fasilitas_View;
 import com.ptkreativatechnologisolusindo.profilekreativa.LinkDatabase;
 import com.ptkreativatechnologisolusindo.profilekreativa.R;
 import com.ptkreativatechnologisolusindo.profilekreativa.Data.Fasilitas;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
