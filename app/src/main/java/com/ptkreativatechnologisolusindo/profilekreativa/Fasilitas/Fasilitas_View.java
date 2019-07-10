@@ -22,6 +22,7 @@ public class Fasilitas_View extends AppCompatActivity {
     LinkDatabase linkDatabase;
     boolean status=false;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
