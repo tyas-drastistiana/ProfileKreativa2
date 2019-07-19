@@ -38,7 +38,6 @@
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:text="@string/deskripsi"
-                android:textColor="@color/text_gray"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:fontFamily="@font/roboto_thin" />
@@ -88,7 +87,6 @@
                         android:layout_gravity="center"
                         android:textAlignment="center"
                         android:text="deskripsi"
-                        android:textColor="@color/text_gray"
                         app:fontFamily="@font/roboto_thin" />
                 </LinearLayout>
             </LinearLayout>
